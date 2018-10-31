@@ -1,0 +1,163 @@
+#include <ros/ros.h>
+#include <iostream>
+#include <mavros_msgs/OverrideRCIn.h>
+#include <mavros_msgs/State.h>
+#include <nav_msgs/Odometry.h>
+#include <geometry_msgs/Point32.h>
+
+#define FACTOR  60.0
+
+#define MINRC   1100
+#define BASERC  1500
+#define MAXRC   1900
+
+// Subscriber to flight mode
+ros::Subscriber mavros_state_sub;
+
+// Subscriber to objective
+ros::Subscriber objective_sub;
+
+// Subscriber to odometry
+ros::Subscriber odom_sub;
+
+// RC publisher
+ros::Publisher pub;
+
+// Time control
+ros::Time lastTime;
+
+// Mark info
+float objectiveX, objectiveY; // Mark center
+float lastObjectiveX, lastObjectiveY; // Last mark center
+double lastObjectiveVelX, lastObjectiveVelY; // Last mark velocity
+
+//Image center
+float uavX, uavY;
+
+double Roll, Pitch;
+
+// Flight mode
+std::string mode;
+bool guided;
+bool armed;
+
+
+void objectiveCb(const geometry_msgs::Point32ConstPtr &msg)
+{
+    objectiveX = msg->x;
+    objectiveY = msg->y;
+}
+
+
+void mavrosStateCb(const mavros_msgs::StateConstPtr &msg)
+{
+    if(msg->mode == std::string("CMODE(0)"))
+        return;
+    //ROS_INFO("I heard: [%s] [%d] [%d]", msg->mode.c_str(), msg->armed, msg->guided);
+    mode = msg->mode;
+    guided = msg->guided==128;
+    armed = msg->armed==128;
+}
+
+
+void odomCb(const nav_msgs::OdometryConstPtr &msg)
+{
+    // Time since last call
+    double timeBetweenMarkers = (ros::Time::now() - lastTime).toSec();
+    lastTime = ros::Time::now();
+
+    char tab2[1024];
+    strncpy(tab2, mode.c_str(), sizeof(tab2));
+    tab2[sizeof(tab2) - 1] = 0;
+    //ROS_INFO("Marker = (%f , %f) | LastMarker = (%f , %f) \n timeBetweenMarkers = %fs | lastMarkVelX = (%f , %f)\n Roll = %f | Pitch = %f\n Mode = %s \n UavX = %f | UavY = %f\n", objectiveX, objectiveY, lastObjectiveX, lastObjectiveY, timeBetweenMarkers, lastObjectiveVelX, lastObjectiveVelY, Roll, Pitch, tab2, uavX, uavY);
+
+    ROS_INFO("Objective = (%f , %f) \n Roll = %f | Pitch = %f\n Mode = %s \n UavX = %f | UavY = %f\n", objectiveX, objectiveY, Roll, Pitch, tab2, uavX, uavY);
+
+    // Error between pose and objective
+    float ErX = 0.0;
+    float ErY = 0.0;
+
+    // Get the uav position
+    uavX = msg->pose.pose.position.x;
+    uavY = msg->pose.pose.position.y;
+
+    // Create RC msg
+    mavros_msgs::OverrideRCIn overrideMsg;
+
+    lastObjectiveX = objectiveX;
+    lastObjectiveY = objectiveY;
+
+    // Get objective center and calculate error
+    ErX = uavX - objectiveX;
+    ErY = uavY - objectiveY;
+
+    // Calculate velocity
+    lastObjectiveVelX = (lastObjectiveX - objectiveX)/timeBetweenMarkers;
+    lastObjectiveVelY = (lastObjectiveY - objectiveY)/timeBetweenMarkers;
+
+    /*
+    if (timeBetweenMarkers < 1.0){
+        lastObjectiveVelX = (lastObjectiveX - objectiveX)/timeBetweenMarkers;
+        lastObjectiveVelY = (lastObjectiveY - objectiveY)/timeBetweenMarkers;
+    } else{
+        lastObjectiveVelX = 0.0;
+        lastObjectiveVelY = 0.0;
+    }
+    */
+
+    // Calculate Roll and Pitch depending on the mode
+    if (mode == "LOITER"){
+        Roll = BASERC + ErX * FACTOR;
+        Pitch = BASERC - ErY * FACTOR;
+    }else if (mode == "ALT_HOLD"){
+        Roll = BASERC - (0.5*ErX+0.1*lastObjectiveVelX);
+        Pitch = BASERC - (0.5*ErY+0.1*lastObjectiveVelY);
+    }else{
+        Roll = BASERC;
+        Pitch = BASERC;
+    }
+
+    // Limit the Roll
+    if (Roll > MAXRC)
+    {
+        Roll = MAXRC;
+    } else if (Roll < MINRC)
+    {
+        Roll = MINRC;
+    }
+
+    // Limit the Pitch
+    if (Pitch > MAXRC)
+    {
+        Pitch = MAXRC;
+    } else if (Pitch < MINRC)
+    {
+        Pitch = MINRC;
+    }
+
+    overrideMsg.channels[0] = Roll;     //Roll
+    overrideMsg.channels[1] = Pitch;    //Pitch
+    overrideMsg.channels[2] = BASERC;   //Throttle
+    overrideMsg.channels[3] = 0;        //Yaw
+    overrideMsg.channels[4] = 0;
+    overrideMsg.channels[5] = 0;
+    overrideMsg.channels[6] = 0;
+    overrideMsg.channels[7] = 0;
+
+    pub.publish(overrideMsg);
+}
+
+
+int main(int argc, char **argv)
+{
+    objectiveX = 0.0;
+    objectiveY = 0.0;
+    ros::init(argc, argv, "uav_control");
+    ros::NodeHandle nh;
+    lastTime = ros::Time::now();
+    mavros_state_sub = nh.subscribe("/mavros/state", 1, mavrosStateCb);
+    odom_sub = nh.subscribe("/mavros/local_position/odom", 1, odomCb);
+    objective_sub = nh.subscribe("/objective", 1, objectiveCb);
+    pub = nh.advertise<mavros_msgs::OverrideRCIn>("/mavros/rc/override", 10);
+    ros::spin();
+}

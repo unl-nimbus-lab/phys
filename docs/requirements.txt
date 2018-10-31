@@ -1,0 +1,7 @@
+click
+decorator==4.1.2
+networkx==1.11
+pyjarowinkler==1.8
+distance==0.1.3
+pattern==2.6
+nltk

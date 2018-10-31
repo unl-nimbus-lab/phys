@@ -1,0 +1,46 @@
+{'degree_360': 1.0}
+{'degree_360': 2.0}
+{'degree_celsius': 1.0}
+{'meter': -1.0}
+{'meter': -2.0}
+{'meter': 1.0, 'degree_360': 2.0}
+{'meter': 1.0}
+{'meter': 2.0}
+{'meter': 3.0}
+{'meter': 4.0}
+{'pascal': 1.0}
+{'pascal': 2.0}
+{'quaternion': 1.0}
+{'quaternion': 2.0}
+{'radian': -1.0}
+{'radian': 1.0}
+{'radian': 2.0}
+{'radian': 3.0}
+{'radian': 4.0}
+{'second': -1.0, 'meter': 1.0}
+{'second': -1.0, 'meter': 2.0}
+{'second': -1.0, 'meter': 3.0}
+{'second': -1.0}
+{'second': -1.5, 'meter': 1.0}
+{'second': -2.0, 'kilogram': 1.0, 'meter': 1.0}
+{'second': -2.0, 'kilogram': 1.0, 'meter': 2.0}
+{'second': -2.0, 'kilogram': 1.0}
+{'second': -2.0, 'meter': 1.0, 'kilogram': 1.0}
+{'second': -2.0, 'meter': 1.0}
+{'second': -2.0, 'meter': 2.0, 'kilogram': 1.0}
+{'second': -2.0, 'meter': 2.0}
+{'second': -2.0, 'meter': 3.0, 'kilogram': 1.0}
+{'second': -2.0}
+{'second': -3.0, 'meter': 1.0}
+{'second': -3.0, 'meter': 2.0, 'kilogram': 1.0}
+{'second': -3.0, 'meter': 3.0}
+{'second': -3.0}
+{'second': -4.0, 'kilogram': 2.0, 'meter': 2.0}
+{'second': -4.0, 'meter': 2.0}
+{'second': -4.0, 'meter': 4.0, 'kilogram': 2.0}
+{'second': 1.0, 'meter': -1.0}
+{'second': 1.0, 'meter': 1.0}
+{'second': 1.0}
+{'second': 2.0}
+{'tesla': 1.0}
+{'tesla': 2.0}

@@ -1,0 +1,18 @@
+FSE2018 Artifact Submission Badge Application
+
+We seek the Reusable and Available badges, as explained below.
+
+
+Reusable:
+This artifact can be reused both on the data provided in the ./data/ directory as well as on new files provided by the user.
+The Dockerfile and ./src/ directories contain everything necessary to reuse the tool in Ubuntu 16.04 and newer.
+The index.html file provides details on how to install phys and examples to show that it is working.
+As per https://arxiv.org/pdf/1609.00037, please find the source code in the 'src' directory and the data in the 'data' directory.
+
+
+Available:
+The artifact is publicly available at https://git.io/f4SjG  (LINK WILL UNMASK AUTHORS!!!).
+ARTIFACT REVIEWER NOTE: We will replace the anonymous github account with our own after the review period.
+
+
+

@@ -1,0 +1,19 @@
+CHANGELOG 
+
+8/8/2013
+update urdf xlmns:xacro
+_rviz.launch
+gazebo files moved to new summit_xl_gazebo
+turnGravityOff x gravity in all urdf
+
+9/8/2013
+added xacro:properties for common config variables in urdf
+urdf modified for EffortJointInterface
+
+29/8/2013 
+catkinized
+
+31/8/2013 
+delete old launch files
+
+

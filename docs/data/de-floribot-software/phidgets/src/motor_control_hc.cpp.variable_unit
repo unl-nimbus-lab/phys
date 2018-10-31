@@ -1,0 +1,56 @@
+0x7fce7af0e750, name, {'dimensionless': 1.0}
+0x7fce7af0f8f0, phid, {'dimensionless': 1.0}
+0x7fce7af0e810, name, {'dimensionless': 1.0}
+0x7fce7af0f9b0, phid, {'dimensionless': 1.0}
+0x7fce7af0fb90, Description, {'dimensionless': 1.0}
+0x7fce7af0e870, m, {'dimensionless': 1.0}
+0x7fce7af0e8d0, m, {'dimensionless': 1.0}
+0x7fce7af0feb0, Value, {'dimensionless': 1.0}
+0x7fce7af0e930, m, {'dimensionless': 1.0}
+0x7fce7af10030, Value, {'dimensionless': 1.0}
+0x7fce7af0eb10, ptr, {'dimensionless': 1.0}
+0x7fce7af10090, phid, {'dimensionless': 1.0}
+0x7fce7af100f0, phid, {'dimensionless': 1.0}
+0x7fce7af0ebd0, err, {'dimensionless': 1.0}
+0x7fce7af101b0, phid, {'dimensionless': 1.0}
+0x7fce7af0ec30, o, {'dimensionless': 1.0}
+0x7fce7af10240, ptr, {'dimensionless': 1.0}
+0x7fce7af0e0f0, odom, {'dimensionless': 1.0}
+0x7fce7af0ec90, m, {'dimensionless': 1.0}
+0x7fce7af102a0, ptr, {'dimensionless': 1.0}
+0x7fce7af0edb0, x, {'second': -1.0, 'meter': 1.0}
+0x7fce7af0ee10, y, {'second': -1.0}
+0x7fce7af0ecf0, rotate, {'dimensionless': 1.0}
+0x7fce7af0ed50, forward, {'dimensionless': 1.0}
+0x7fce7af0ee70, forward_speed, {'dimensionless': 1.0}
+0x7fce7af0deb0, speed, {'dimensionless': 1.0}
+0x7fce7af0ef30, time_elapsed, {'second': 1.0}
+0x7fce7af0ef90, angular_velocity_error, {'second': -1.0}
+0x7fce7af0eff0, angular_accel, {'second': -2.0}
+0x7fce7af0e4b0, max_angular_accel, {'second': -2.0}
+0x7fce7af0f050, vx, {'second': -1.0, 'meter': 1.0}
+0x7fce7af0f0b0, vy, {'second': -1.0, 'meter': 1.0}
+0x7fce7af0f110, v, {'second': -1.0, 'meter': 1.0}
+0x7fce7af0f170, forward_velocity_error, {'second': -1.0, 'meter': 1.0}
+0x7fce7af0e3f0, max_angular_error, {'second': -1.0}
+0x7fce7af0e450, max_velocity_error, {'second': -1.0}
+0x7fce7af0f1d0, linear_accel, {'second': -2.0, 'meter': 1.0}
+0x7fce7af0e510, max_linear_accel, {'second': -2.0, 'meter': 1.0}
+0x7fce7af0e330, linear_deadband, {'second': -1.0, 'meter': 1.0}
+0x7fce7af0e210, linear_velocity_gain, {'dimensionless': 1.0}
+0x7fce7af0e150, current_linear_velocity, {'second': -1.0, 'meter': 1.0}
+0x7fce7af0e390, angular_deadband, {'second': -1.0}
+0x7fce7af0e270, angular_velocity_gain, {'dimensionless': 1.0}
+0x7fce7af0e1b0, current_angular_velocity, {'second': -1.0}
+0x7fce7af0e2d0, max_angular_velocity, {'dimensionless': 1.0}
+0x7fce7af0ddf0, phid, {'dimensionless': 1.0}
+0x7fce7af0df10, acceleration, {'dimensionless': 1.0}
+0x7fce7af10360, argv, {'dimensionless': 1.0}
+0x7fce7af0f230, n, {'dimensionless': 1.0}
+0x7fce7af0f290, nh, {'dimensionless': 1.0}
+0x7fce7af0e090, rotation_offset, {'dimensionless': 1.0}
+0x7fce7af0f410, g, {'dimensionless': 1.0}
+0x7fce7af0f590, frequency, {'dimensionless': 1.0}
+0x7fce7af0f830, ser, {'dimensionless': 1.0}
+0x7fce7af0f7d0, loop_rate, {'dimensionless': 1.0}
+0x7fce7af0f890, time_since_last_command_sec, {'second': 1.0}

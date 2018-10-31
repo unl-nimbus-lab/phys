@@ -1,0 +1,35 @@
+0x7fbaffc0ada0, pose, {'dimensionless': 1.0}
+0x7fbaffc0ae00, q0, {'quaternion': 1.0}
+0x7fbaffc0ae60, q1, {'quaternion': 1.0}
+0x7fbaffc0aec0, q2, {'quaternion': 1.0}
+0x7fbaffc0af20, q3, {'quaternion': 1.0}
+0x7fbaffc0b6a0, msg, {'dimensionless': 1.0}
+0x7fbaffc0a6e0, q_raw, {'dimensionless': 1.0}
+0x7fbaffc0a7a0, z, {'meter': 1.0}
+0x7fbaffc0af80, q_norm, {'dimensionless': 1.0}
+0x7fbaffc0afe0, q_inv, {'dimensionless': 1.0}
+0x7fbaffc0b040, q, {'dimensionless': 1.0}
+0x7fbaffc0b0a0, ax, {'second': -2.0, 'meter': 1.0}
+0x7fbaffc0b700, msg, {'dimensionless': 1.0}
+0x7fbaffc0b100, ay, {'second': -2.0, 'meter': 1.0}
+0x7fbaffc0b160, az, {'second': -2.0, 'meter': 1.0}
+0x7fbaffc0b1c0, raw_az, {'dimensionless': 1.0}
+0x7fbaffc0b220, baro_raw, {'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}
+0x7fbaffc0b760, msg, {'dimensionless': 1.0}
+0x7fbaffc0a920, baro_sum, {'dimensionless': 1.0}
+0x7fbaffc0aa40, baro_altitude, {'meter': 1.0}
+0x7fbaffc0ab60, p0, {'dimensionless': 1.0}
+0x7fbaffc0ab00, temp, {'degree_celsius': 1.0}
+0x7fbaffc0aaa0, zero_altitude, {'meter': 1.0}
+0x7fbaffc0b280, msg, {'dimensionless': 1.0}
+0x7fbaffc0b8a0, argv, {'dimensionless': 1.0}
+0x7fbaffc0b2e0, nh, {'dimensionless': 1.0}
+0x7fbaffc0b340, rate, {'second': -1.0}
+0x7fbaffc0b5e0, baro_mean, {'dimensionless': 1.0}
+0x7fbaffc0ac20, az_offset, {'dimensionless': 1.0}
+0x7fbaffc0ac80, az_sum, {'second': -2.0, 'meter': 1.0}
+0x7fbaffc0a740, vz, {'second': -1.0, 'meter': 1.0}
+0x7fbaffc0b640, dt, {'second': 1.0}
+0x7fbaffc0abc0, world_az, {'second': -2.0, 'meter': 1.0}
+0x7fbaffc0a980, k_vz, {'second': -1.0}
+0x7fbaffc0a9e0, k_z, {'dimensionless': 1.0}

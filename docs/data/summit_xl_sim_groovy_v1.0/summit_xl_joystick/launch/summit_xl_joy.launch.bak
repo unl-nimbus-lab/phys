@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+ <!-- joy node -->
+  <node respawn="true" pkg="joy" type="joy" name="joy" >
+    <param name="dev" type="string" value="/dev/input/js1" />
+    <param name="deadzone" value="0.12" />
+  </node>
+
+ <!-- Axes -->
+  <!-- param name="cmd_topic" value="/summit_controller/command" type="string"/ -->
+  <!-- param name="cmd_topic" value="/summit_xl_ctrl/cmd_vel" type="string" / -->
+  <param name="cmd_topic" value="/summit_xl_ctrl/command" type="string" />
+  <param name="axis_linear" value="1" type="int"/>
+  <param name="axis_angular" value="2" type="int"/>  <!-- value = 0 -->
+  <param name="scale_linear" value="1" type="double"/>
+  <param name="scale_angular" value="2" type="double"/>
+  <param name="sim_mode" value="true" type="bool"/>
+
+  <node pkg="summit_xl_joystick" type="summit_xl_joystick" name="summit_joy"/>
+
+</launch>
+

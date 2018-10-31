@@ -1,0 +1,41 @@
+position...., {'meter': 1.0}
+distance...., {'meter': 1.0}
+diameter...., {'meter': 1.0}
+radius......, {'meter': 1.0}
+length......, {'meter': 1.0}
+width......., {'meter': 1.0}
+height......, {'meter': 1.0}
+depth......., {'meter': 1.0}
+wheelbase..., {'meter': 1.0}
+altitude...., {'meter': 1.0}
+time........, {'second': 1.0}
+duration...., {'second': 1.0}
+period......, {'second': 1.0}
+age........., {'second': 1.0}
+angle......., {'radian': 1.0}
+theta......., {'radian': 1.0}
+roll........, {'radian': 1.0}
+pitch......., {'radian': 1.0}
+yaw........., {'radian': 1.0}
+latitude...., {'degree_360': 1.0}
+longitude..., {'degree_360': 1.0}
+speed......., {'meter': 1.0, 'second': -1.0}
+velocity...., {'meter': 1.0, 'second': -1.0}
+acceleration, {'meter': 1.0, 'second': -2.0}
+deceleration, {'meter': 1.0, 'second': -2.0}
+gravity....., {'meter': 1.0, 'second': -2.0}
+force......., {'kilogram': 1.0, 'meter': 1.0, 'second': -2.0}
+thrust......, {'kilogram': 1.0, 'meter': 1.0, 'second': -2.0}
+energy......, {'kilogram': 1.0, 'meter': 2.0, 'second': -2.0}
+effort......, {'kilogram': 1.0, 'meter': 2.0, 'second': -2.0}
+torque......, {'kilogram': 1.0, 'meter': 2.0, 'second': -2.0}
+area........, {'meter': 2.0}
+mass........, {'kilogram': 1.0}
+weight......, {'kilogram': 1.0}
+temperature., {'degree_celsius': 1.0}
+frequency..., {'second': -1.0}
+orientation., {'quaternion': 1.0}
+tilt........, {'radian': 1.0}
+pan........., {'radian': 1.0}
+pressure...., {'kilogram': 1.0, 'meter': -1.0, 'second': -2.0}
+voltage....., {'kilogram': 1.0, 'meter': 2.0, 'second': -3.0, 'amp': -1.0}

@@ -1,0 +1,7 @@
+<library path="lib/libchannel_controller">
+    <class type="channel_controller::ChannelController" base_class_type="nav_core::BaseLocalPlanner">
+        <description>
+        Channel based controller as base local planner.
+        </description>
+    </class>
+</library>

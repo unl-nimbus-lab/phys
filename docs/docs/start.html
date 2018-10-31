@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>phys: QuickStart</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+    
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+ 
+pre {
+    font-size: 11px;
+    max-height: 500px;
+    <!--overflow-wrap: break-word;-->
+}
+    </style>
+
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="../index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                        <span class="text-bold">phys</span>
+                        <span class="text-highlight">: Probabilistic Physical Unit Assignment and Inconsistency Detection</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="active">Quick Start</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start + Examples</h1>
+                    <!--<div class="meta"><i class="fa fa-clock-o"></i> Last updated: Jan 25th, 2016</div>-->
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+                            <section id="download-section" class="doc-section">
+                                <h2 class="section-title">Download </h2>
+                                <div class="section-block">
+                                    <p>Get <b>phys</b> with git:</p>
+
+                                    <div class="code-block">
+                                        <p><code> git clone https://github.com/anon-5TEYMG7Q/phys.git </code>(BROWSING THAT PAGE MIGHT UNMASK AUTHORS!!!) </p>
+                                    </div><!--//code-block-->
+                                    <p>Or download a ZIP file of the repo, and unzip it.</p>
+                                    <a href="https://github.com/anon-5TEYMG7Q/phys/archive/master.zip" class="btn btn-green" target="_blank"><i class="fa fa-download"></i>Download phys (30Mb, zip)</a>
+                                </div>
+                            </section><!--//doc-section-->
+                            <section id="installation-section" class="doc-section">
+                                <h2 class="section-title">Installation</h2>
+                                <div id="step1"  class="section-block">
+                                    <h3 class="block-title">Step One</h3>
+                                    <p>Get <b>Docker</b>.  Click <a target="_blank" href="https://docs.docker.com/install/">here for Docker's install page</a>.  The Dockerfile for <b>phys</b> has been tested with Ubuntu 16.04.</p>
+                                </div><!--//section-block-->
+                                <div id="step2"  class="section-block">
+                                    <h3 class="block-title">Step Two</h3>
+                                    <p>From the command line, navigate to the <b>phys</b> root directory and build with docker:</p>
+                                    <div class="code-block">
+                                        <p><code>docker build . -t phys</code></p>
+                                    </div><!--//code-block-->
+                                    <p>That's it! You're ready to test the installation by running <b>phys</b> <a class="scrollto" href="#ex1">examples.</a></p>
+
+                            </section><!--//doc-section-->
+                            
+                            <section id="example-section" class="doc-section">
+                                <h2 class="section-title">Examples</h2>
+                                <div id="ex1"  class="section-block">
+                                    <h3 class="block-title">Example 1: Detect a Physical Unit (PU) Inconsistency</h3>
+                                    <div class="code-block">
+                                        <h6>In a terminal, navigate to the root directory of the phys repo.  To run phys on a provided file from the <a href="./data.html">data</a> directory and detect a physical unit inconsistency with <b>phys</b>:</h6>
+                                        <p><code>docker run -v "$(pwd)"/data:/data phys /data/summit_xl_sim/summit_xl_robot_control/src/summit_xl_robot_control.cpp</code></p>
+                                    </div><!--//code-block-->
+                                    </p>
+<p>This outputs the type of physical unit inconsistency and the line number where it occurs:</p>
+<p><pre>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ADDITION OF INCOMPATIBLE UNITS
+Addition of inconsistent units on line 576. Attempting to add [{'second': -1.0}] to [{'second': -1.0, 'meter': 1.0}].
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ADDITION OF INCOMPATIBLE UNITS
+Addition of inconsistent units on line 577. Attempting to add [{'second': -1.0}] to [{'second': -1.0, 'meter': 1.0}].
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ADDITION OF INCOMPATIBLE UNITS
+Addition of inconsistent units on line 578. Attempting to add [{'second': -1.0}] to [{'second': -1.0, 'meter': 1.0}].
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ADDITION OF INCOMPATIBLE UNITS
+Addition of inconsistent units on line 579. Attempting to add [{'second': -1.0}] to [{'second': -1.0, 'meter': 1.0}].
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 576. Units: [{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 577. Units: [{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 578. Units: [{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 579. Units: [{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]
+file:/data/summit_xl_robot_control.cpp, strong:8,weak:1,
+</pre></p>
+                                </div><!--//section-block-->
+
+                                <div id="ex2" class="section-block">
+                                    <h3 class="block-title">Example 2: Infer Physical Unit (PU) Abstract Types</h3>
+                                    <div class="code-block">
+                                        <h6>This example shows the predicted physical units (the abstract type) inferred by <b>phys</b> for each variable:</h6>
+                                        <p><code>docker run -v "$(pwd)"/data:/data phys /data/bayesian_compact_ware/ard/src/ard_node.cpp --print_variable_types</code></p>
+                                    </div><!--//code-block-->
+                                    </p>
+<p>This outputs the variable names from the file and the list of possible physical unit types sorted by likelihood:</p>
+<p><pre>
+
+
+current_error_y:
+[({'meter': 1.0}, 0.9999982819637612), ({'quaternion': 1.0}, 4.5180781192533104e-05), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 4.5180781192533104e-05), ({'degree_celsius': 1.0}, 4.5180781192533104e-05)]
+
+diff_error_x:
+[({'meter': 1.0}, 0.9980174990808746), ({'quaternion': 1.0}, 0.003899435685769781), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.003899435685769781), ({'degree_celsius': 1.0}, 0.003899435685769781)]
+
+q2:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+px:
+[({'meter': 1.0}, 0.9947641035220387), ({'quaternion': 1.0}, 0.05004066270307328), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.05004066270307328), ({'degree_celsius': 1.0}, 0.05004066270307328)]
+
+t2:
+[({'quaternion': 1.0}, 0.9090909090909091), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+t1:
+[({'quaternion': 1.0}, 0.9090909090909091), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+current_error_x:
+[({'meter': 1.0}, 0.9999982819637612), ({'quaternion': 1.0}, 4.5180781192533104e-05), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 4.5180781192533104e-05), ({'degree_celsius': 1.0}, 4.5180781192533104e-05)]
+
+q1:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+ic_sig.doit:
+[({'quaternion': 1.0}, 0.5833333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5833333333333333), ({'degree_celsius': 1.0}, 0.5833333333333333), ({'meter': 1.0}, 0.5833333333333333)]
+
+t0:
+[({'quaternion': 1.0}, 0.9090909090909091), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+diff_error_y:
+[({'meter': 1.0}, 0.9980174990808746), ({'quaternion': 1.0}, 0.003899435685769781), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.003899435685769781), ({'degree_celsius': 1.0}, 0.003899435685769781)]
+
+py:
+[({'meter': 1.0}, 0.9947641035220387), ({'quaternion': 1.0}, 0.05004066270307328), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.05004066270307328), ({'degree_celsius': 1.0}, 0.05004066270307328)]
+
+previous_error_x:
+[({'meter': 1.0}, 0.9998883101315769), ({'quaternion': 1.0}, 0.00023435297609752936), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.00023435297609752936), ({'degree_celsius': 1.0}, 0.00023435297609752936)]
+
+previous_error_y:
+[({'meter': 1.0}, 0.9998883101315769), ({'quaternion': 1.0}, 0.00023435297609752936), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.00023435297609752936), ({'degree_celsius': 1.0}, 0.00023435297609752936)]
+
+r1:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+q3:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+t3:
+[({'quaternion': 1.0}, 0.9090909090909091), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r2:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r3:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r0:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+q0:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+Solving Constraints 2 ... 2018-06-25 14:12:07 
+current_error_y:
+[({'meter': 1.0}, 0.9999983806090804), ({'quaternion': 1.0}, 4.5180781192533104e-05), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 4.5180781192533104e-05), ({'degree_celsius': 1.0}, 4.5180781192533104e-05)]
+
+diff_error_x:
+[({'meter': 1.0}, 0.9995207264849759), ({'quaternion': 1.0}, 0.003899435685769781), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.003899435685769781), ({'degree_celsius': 1.0}, 0.003899435685769781)]
+
+q2:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+px:
+[({'meter': 1.0}, 0.9947641204249956), ({'quaternion': 1.0}, 0.05004066270307328), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.05004066270307328), ({'degree_celsius': 1.0}, 0.05004066270307328)]
+
+t2:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+current_error_x:
+[({'meter': 1.0}, 0.9999983806090804), ({'quaternion': 1.0}, 4.5180781192533104e-05), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 4.5180781192533104e-05), ({'degree_celsius': 1.0}, 4.5180781192533104e-05)]
+
+q1:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+ic_sig.doit:
+[({'quaternion': 1.0}, 0.5833333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5833333333333333), ({'degree_celsius': 1.0}, 0.5833333333333333), ({'meter': 1.0}, 0.5833333333333333)]
+
+t0:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+diff_error_y:
+[({'meter': 1.0}, 0.9995207264849759), ({'quaternion': 1.0}, 0.003899435685769781), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.003899435685769781), ({'degree_celsius': 1.0}, 0.003899435685769781)]
+
+t1:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+previous_error_x:
+[({'meter': 1.0}, 0.9999743485109791), ({'quaternion': 1.0}, 0.00023435297609752936), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.00023435297609752936), ({'degree_celsius': 1.0}, 0.00023435297609752936)]
+
+previous_error_y:
+[({'meter': 1.0}, 0.9999743485109791), ({'quaternion': 1.0}, 0.00023435297609752936), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.00023435297609752936), ({'degree_celsius': 1.0}, 0.00023435297609752936)]
+
+r1:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+q3:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+py:
+[({'meter': 1.0}, 0.9947641204249956), ({'quaternion': 1.0}, 0.05004066270307328), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.05004066270307328), ({'degree_celsius': 1.0}, 0.05004066270307328)]
+
+t3:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r2:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r3:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r0:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+q0:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+Solving Constraints 3 ... 2018-06-25 14:12:07 
+current_error_y:
+[({'meter': 1.0}, 0.9999983806090804), ({'quaternion': 1.0}, 4.5180781192533104e-05), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 4.5180781192533104e-05), ({'degree_celsius': 1.0}, 4.5180781192533104e-05)]
+
+diff_error_x:
+[({'meter': 1.0}, 0.9995207264849759), ({'quaternion': 1.0}, 0.003899435685769781), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.003899435685769781), ({'degree_celsius': 1.0}, 0.003899435685769781)]
+
+q2:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+px:
+[({'meter': 1.0}, 0.9947641204249956), ({'quaternion': 1.0}, 0.05004066270307328), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.05004066270307328), ({'degree_celsius': 1.0}, 0.05004066270307328)]
+
+t2:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+current_error_x:
+[({'meter': 1.0}, 0.9999983806090804), ({'quaternion': 1.0}, 4.5180781192533104e-05), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 4.5180781192533104e-05), ({'degree_celsius': 1.0}, 4.5180781192533104e-05)]
+
+q1:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+ic_sig.doit:
+[({'quaternion': 1.0}, 0.5833333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5833333333333333), ({'degree_celsius': 1.0}, 0.5833333333333333), ({'meter': 1.0}, 0.5833333333333333)]
+
+t0:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+diff_error_y:
+[({'meter': 1.0}, 0.9995207264849759), ({'quaternion': 1.0}, 0.003899435685769781), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.003899435685769781), ({'degree_celsius': 1.0}, 0.003899435685769781)]
+
+t1:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+previous_error_x:
+[({'meter': 1.0}, 0.9999743485109791), ({'quaternion': 1.0}, 0.00023435297609752936), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.00023435297609752936), ({'degree_celsius': 1.0}, 0.00023435297609752936)]
+
+previous_error_y:
+[({'meter': 1.0}, 0.9999743485109791), ({'quaternion': 1.0}, 0.00023435297609752936), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.00023435297609752936), ({'degree_celsius': 1.0}, 0.00023435297609752936)]
+
+r1:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+q3:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+py:
+[({'meter': 1.0}, 0.9947641204249956), ({'quaternion': 1.0}, 0.05004066270307328), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.05004066270307328), ({'degree_celsius': 1.0}, 0.05004066270307328)]
+
+t3:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r2:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r3:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r0:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+q0:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+Solving Constraints 4 ... 2018-06-25 14:12:07 
+current_error_y:
+[({'meter': 1.0}, 0.9999983806090804), ({'quaternion': 1.0}, 4.5180781192533104e-05), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 4.5180781192533104e-05), ({'degree_celsius': 1.0}, 4.5180781192533104e-05)]
+
+diff_error_x:
+[({'meter': 1.0}, 0.9995207264849759), ({'quaternion': 1.0}, 0.003899435685769781), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.003899435685769781), ({'degree_celsius': 1.0}, 0.003899435685769781)]
+
+q2:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+px:
+[({'meter': 1.0}, 0.9947641204249956), ({'quaternion': 1.0}, 0.05004066270307328), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.05004066270307328), ({'degree_celsius': 1.0}, 0.05004066270307328)]
+
+t2:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+current_error_x:
+[({'meter': 1.0}, 0.9999983806090804), ({'quaternion': 1.0}, 4.5180781192533104e-05), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 4.5180781192533104e-05), ({'degree_celsius': 1.0}, 4.5180781192533104e-05)]
+
+q1:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+ic_sig.doit:
+[({'quaternion': 1.0}, 0.5833333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5833333333333333), ({'degree_celsius': 1.0}, 0.5833333333333333), ({'meter': 1.0}, 0.5833333333333333)]
+
+t0:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+diff_error_y:
+[({'meter': 1.0}, 0.9995207264849759), ({'quaternion': 1.0}, 0.003899435685769781), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.003899435685769781), ({'degree_celsius': 1.0}, 0.003899435685769781)]
+
+t1:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+previous_error_x:
+[({'meter': 1.0}, 0.9999743485109791), ({'quaternion': 1.0}, 0.00023435297609752936), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.00023435297609752936), ({'degree_celsius': 1.0}, 0.00023435297609752936)]
+
+previous_error_y:
+[({'meter': 1.0}, 0.9999743485109791), ({'quaternion': 1.0}, 0.00023435297609752936), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.00023435297609752936), ({'degree_celsius': 1.0}, 0.00023435297609752936)]
+
+r1:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+q3:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+py:
+[({'meter': 1.0}, 0.9947641204249956), ({'quaternion': 1.0}, 0.05004066270307328), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.05004066270307328), ({'degree_celsius': 1.0}, 0.05004066270307328)]
+
+t3:
+[({'quaternion': 1.0}, 0.9763617677286742), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r2:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r3:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+r0:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+q0:
+[({'quaternion': 1.0}, 0.9947643979057592), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5), ({'meter': 1.0}, 0.5)]
+
+</pre></p>
+                                </div><!--//section-block-->
+
+                                <div id="ex3" class="section-block">
+                                    <h3 class="block-title">Example 3: Show constraints</h3>
+                                    <div class="code-block">
+                                        <h6>This example shows the constraints generated during each round of analysis:</h6>
+
+                                        <p><code>docker run -v "$(pwd)"/data:/data phys /data/summit_xl_sim/summit_xl_robot_control/src/summit_xl_robot_control.cpp --print_constraints</code></p>
+<p>Note that the input here is the same file as <a class="scrollto" href="#ex1">example 1</a>, but we're looking at a different part of the output.</p>
+                                    </div><!--//code-block-->
+                                    </p>
+<p>This outputs the different constraints (Dataflow=df_constraint, Naming=nm_constraint, Computed-Unit=cu_constraint, Known-Symbol=ks_constraint, Conversion=cf_constraint) used by <b>phys</b> while analyzing this file:</p>
+<p><pre>
+cu_constraint: u [[{'meter': 1.0}], [{'meter': 1.0}]]
+cu_constraint: v_ref_x_ [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v_ref_y_ [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: w_ref_ [[{'second': -1.0}]]
+cu_constraint: v_ref_z_ [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v_left_mps [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v_right_mps [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: linearSpeedXMps_ [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: epv [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: epw [[{'second': -1.0}]]
+cu_constraint: epvant [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: epwant [[{'second': -1.0}]]
+cu_constraint: v_frw_mps [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v_flw_mps [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v_blw_mps [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v_brw_mps [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: vx [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: vy [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: w [[{'second': -1.0}]]
+cu_constraint: L [[{'meter': 1.0}]]
+cu_constraint: W [[{'meter': 1.0}]]
+cu_constraint: wx1 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: wy1 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: a1 [[{'radian': 1.0}]]
+cu_constraint: wx2 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: wy2 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: a2 [[{'radian': 1.0}]]
+cu_constraint: wx3 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: wy3 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: a3 [[{'radian': 1.0}]]
+cu_constraint: wx4 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: wy4 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: a4 [[{'radian': 1.0}]]
+cu_constraint: frw_ref_vel_msg.data [[{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]]
+cu_constraint: flw_ref_vel_msg.data [[{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]]
+cu_constraint: blw_ref_vel_msg.data [[{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]]
+cu_constraint: brw_ref_vel_msg.data [[{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]]
+cu_constraint: frw_ref_pos_msg.data [[{'radian': 1.0}]]
+cu_constraint: flw_ref_pos_msg.data [[{'radian': 1.0}]]
+cu_constraint: blw_ref_pos_msg.data [[{'radian': 1.0}]]
+cu_constraint: brw_ref_pos_msg.data [[{'radian': 1.0}]]
+cu_constraint: scissor_ref_pos [[{'meter': 1.0}]]
+cu_constraint: scissor_ref_pos_msg.data [[{'meter': 1.0}]]
+cu_constraint: pan_ref_pos_msg.data [[{'radian': 1.0}]]
+cu_constraint: pos_ref_pan_ [[{'radian': 1.0}]]
+cu_constraint: tilt_ref_pos_msg.data [[{'radian': 1.0}]]
+cu_constraint: pos_ref_tilt_ [[{'radian': 1.0}]]
+cu_constraint: robot_pose_vx_ [[{'second': -1.0, 'meter': 1.0}], [{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: robot_pose_vy_ [[{'second': -1.0, 'meter': 1.0}], [{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: a1 [[{'radian': 1.0}]]
+cu_constraint: a2 [[{'radian': 1.0}]]
+cu_constraint: a3 [[{'radian': 1.0}]]
+cu_constraint: a4 [[{'radian': 1.0}]]
+cu_constraint: v1y [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v1 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v1x [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v2x [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v2 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v2y [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v3y [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v3 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v3x [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v4y [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v4 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: v4x [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: C [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: B [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: D [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: A [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: fSamplePeriod [[{'second': 1.0}]]
+cu_constraint: ang_vel_z_ [[{'second': -1.0}]]
+cu_constraint: robot_pose_px_ [[{'meter': 1.0}]]
+cu_constraint: robot_pose_py_ [[{'meter': 1.0}]]
+cu_constraint: orientation_x_ [[{'quaternion': 1.0}]]
+cu_constraint: orientation_y_ [[{'quaternion': 1.0}]]
+cu_constraint: orientation_z_ [[{'quaternion': 1.0}]]
+cu_constraint: orientation_w_ [[{'quaternion': 1.0}]]
+cu_constraint: ang_vel_x_ [[{'second': -1.0}]]
+cu_constraint: ang_vel_y_ [[{'second': -1.0}]]
+cu_constraint: lin_acc_y_ [[{'second': -2.0, 'meter': 1.0}]]
+cu_constraint: lin_acc_z_ [[{'second': -2.0, 'meter': 1.0}]]
+cu_constraint: lin_acc_x_ [[{'second': -2.0, 'meter': 1.0}]]
+cu_constraint: diff [[{'second': 1.0}]]
+cu_constraint: x1 [[{'meter': 1.0}]]
+cu_constraint: y1 [[{'meter': 1.0}]]
+cu_constraint: q1 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: x2 [[{'meter': 1.0}]]
+cu_constraint: y2 [[{'meter': 1.0}]]
+cu_constraint: q2 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: x3 [[{'meter': 1.0}]]
+cu_constraint: y3 [[{'meter': 1.0}]]
+cu_constraint: q3 [[{'second': -1.0, 'meter': 1.0}]]
+cu_constraint: x4 [[{'meter': 1.0}]]
+cu_constraint: y4 [[{'meter': 1.0}]]
+cu_constraint: q4 [[{'second': -1.0, 'meter': 1.0}]]
+df_constraint: u [{'meter': 1.0}], max [{'meter': 1.0}]
+df_constraint: u [{'meter': 1.0}], max [{'meter': 1.0}]
+df_constraint: u [{'meter': 1.0}], min [{'meter': 1.0}]
+df_constraint: u [{'meter': 1.0}], min [{'meter': 1.0}]
+df_constraint: cmd_vel.linear.x [{'second': -1.0, 'meter': 1.0}], u []
+df_constraint: cmd_vel.linear.y [{'second': -1.0, 'meter': 1.0}], u []
+df_constraint: cmd_vel.angular.z [{'second': -1.0}], u []
+df_constraint: cmd_vel.linear.z [{'second': -1.0, 'meter': 1.0}], u []
+df_constraint: v_right_mps [{'second': -1.0, 'meter': 1.0}], v_left_mps [{'second': -1.0, 'meter': 1.0}]
+df_constraint: linearSpeedXMps_ [{'second': -1.0, 'meter': 1.0}], v_right_mps [{'second': -1.0, 'meter': 1.0}]
+df_constraint: linearSpeedXMps_ [{'second': -1.0, 'meter': 1.0}], v_left_mps [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v_right_mps [{'second': -1.0, 'meter': 1.0}], v_left_mps [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v_ref_x_ [{'second': -1.0, 'meter': 1.0}], linearSpeedXMps_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: epv [{'second': -1.0, 'meter': 1.0}], v_ref_x_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: epv [{'second': -1.0, 'meter': 1.0}], linearSpeedXMps_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: w_ref_ [{'second': -1.0}], angularSpeedRads_ [{'second': -1.0}]
+df_constraint: epw [{'second': -1.0}], w_ref_ [{'second': -1.0}]
+df_constraint: epw [{'second': -1.0}], angularSpeedRads_ [{'second': -1.0}]
+df_constraint: epv [{'second': -1.0, 'meter': 1.0}], epvant [{'second': -1.0, 'meter': 1.0}]
+df_constraint: epw [{'second': -1.0}], epwant [{'second': -1.0}]
+df_constraint: epvant [{'second': -1.0, 'meter': 1.0}], epv [{'second': -1.0, 'meter': 1.0}]
+df_constraint: epwant [{'second': -1.0}], epw [{'second': -1.0}]
+df_constraint: dUl [], uv []
+df_constraint: dUr [], uv []
+df_constraint: limit [{'meter': 1.0}], max []
+df_constraint: vx [{'second': -1.0, 'meter': 1.0}], v_ref_x_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: vy [{'second': -1.0, 'meter': 1.0}], v_ref_y_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: w [{'second': -1.0}], w_ref_ [{'second': -1.0}]
+df_constraint: L [{'meter': 1.0}], summit_xl_wheelbase_ [{'meter': 1.0}]
+df_constraint: W [{'meter': 1.0}], summit_xl_trackwidth_ [{'meter': 1.0}]
+df_constraint: wx1 [{'second': -1.0, 'meter': 1.0}], v_ref_x_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: wy1 [{'second': -1.0, 'meter': 1.0}], v_ref_y_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: wx2 [{'second': -1.0, 'meter': 1.0}], v_ref_x_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: wy2 [{'second': -1.0, 'meter': 1.0}], v_ref_y_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: wx3 [{'second': -1.0, 'meter': 1.0}], v_ref_x_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: wy3 [{'second': -1.0, 'meter': 1.0}], v_ref_y_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: wx4 [{'second': -1.0, 'meter': 1.0}], v_ref_x_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: wy4 [{'second': -1.0, 'meter': 1.0}], v_ref_y_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: limit [{'meter': 1.0}], max []
+df_constraint: frw_ref_pos_msg.data [{'radian': 1.0}], a1 [{'radian': 1.0}]
+df_constraint: flw_ref_pos_msg.data [{'radian': 1.0}], a2 [{'radian': 1.0}]
+df_constraint: blw_ref_pos_msg.data [{'radian': 1.0}], a3 [{'radian': 1.0}]
+df_constraint: brw_ref_pos_msg.data [{'radian': 1.0}], a4 [{'radian': 1.0}]
+df_constraint: scissor_ref_pos [{'meter': 1.0}], u []
+df_constraint: pan_ref_pos_msg.data [{'radian': 1.0}], pos_ref_pan_ [{'radian': 1.0}]
+df_constraint: tilt_ref_pos_msg.data [{'radian': 1.0}], pos_ref_tilt_ [{'radian': 1.0}]
+df_constraint: robot_pose_vx_ [{'second': -1.0, 'meter': 1.0}], linearSpeedXMps_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: robot_pose_vy_ [{'second': -1.0, 'meter': 1.0}], linearSpeedXMps_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v1y [{'second': -1.0, 'meter': 1.0}], v1 [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v1x [{'second': -1.0, 'meter': 1.0}], v1 [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v2x [{'second': -1.0, 'meter': 1.0}], v2 [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v2y [{'second': -1.0, 'meter': 1.0}], v2 [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v3y [{'second': -1.0, 'meter': 1.0}], v3 [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v3x [{'second': -1.0, 'meter': 1.0}], v3 [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v4y [{'second': -1.0, 'meter': 1.0}], v4 [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v4x [{'second': -1.0, 'meter': 1.0}], v4 [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v4y [{'second': -1.0, 'meter': 1.0}], v1y [{'second': -1.0, 'meter': 1.0}]
+df_constraint: C [{'second': -1.0, 'meter': 1.0}], v4y [{'second': -1.0, 'meter': 1.0}]
+df_constraint: C [{'second': -1.0, 'meter': 1.0}], v1y [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v2x [{'second': -1.0, 'meter': 1.0}], v1x [{'second': -1.0, 'meter': 1.0}]
+df_constraint: B [{'second': -1.0, 'meter': 1.0}], v2x [{'second': -1.0, 'meter': 1.0}]
+df_constraint: B [{'second': -1.0, 'meter': 1.0}], v1x [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v2y [{'second': -1.0, 'meter': 1.0}], v3y [{'second': -1.0, 'meter': 1.0}]
+df_constraint: D [{'second': -1.0, 'meter': 1.0}], v2y [{'second': -1.0, 'meter': 1.0}]
+df_constraint: D [{'second': -1.0, 'meter': 1.0}], v3y [{'second': -1.0, 'meter': 1.0}]
+df_constraint: v3x [{'second': -1.0, 'meter': 1.0}], v4x [{'second': -1.0, 'meter': 1.0}]
+df_constraint: A [{'second': -1.0, 'meter': 1.0}], v3x [{'second': -1.0, 'meter': 1.0}]
+df_constraint: A [{'second': -1.0, 'meter': 1.0}], v4x [{'second': -1.0, 'meter': 1.0}]
+df_constraint: A [{'second': -1.0, 'meter': 1.0}], B [{'second': -1.0, 'meter': 1.0}]
+df_constraint: robot_pose_vx_ [{'second': -1.0, 'meter': 1.0}], A [{'second': -1.0, 'meter': 1.0}]
+df_constraint: robot_pose_vx_ [{'second': -1.0, 'meter': 1.0}], B [{'second': -1.0, 'meter': 1.0}]
+df_constraint: C [{'second': -1.0, 'meter': 1.0}], D [{'second': -1.0, 'meter': 1.0}]
+df_constraint: robot_pose_vy_ [{'second': -1.0, 'meter': 1.0}], C [{'second': -1.0, 'meter': 1.0}]
+df_constraint: robot_pose_vy_ [{'second': -1.0, 'meter': 1.0}], D [{'second': -1.0, 'meter': 1.0}]
+df_constraint: odom_trans.header.stamp [{'second': 1.0}], current_time [{'second': 1.0}]
+df_constraint: odom_trans.transform.translation.x [{'meter': 1.0}], robot_pose_px_ [{'meter': 1.0}]
+df_constraint: odom_trans.transform.translation.y [{'meter': 1.0}], robot_pose_py_ [{'meter': 1.0}]
+df_constraint: odom_trans.transform.rotation.x [{'quaternion': 1.0}], orientation_x_ [{'quaternion': 1.0}]
+df_constraint: odom_trans.transform.rotation.y [{'quaternion': 1.0}], orientation_y_ [{'quaternion': 1.0}]
+df_constraint: odom_trans.transform.rotation.z [{'quaternion': 1.0}], orientation_z_ [{'quaternion': 1.0}]
+df_constraint: odom_trans.transform.rotation.w [{'quaternion': 1.0}], orientation_w_ [{'quaternion': 1.0}]
+df_constraint: odom.header.stamp [{'second': 1.0}], current_time [{'second': 1.0}]
+df_constraint: odom.pose.pose.position.x [{'meter': 1.0}], robot_pose_px_ [{'meter': 1.0}]
+df_constraint: odom.pose.pose.position.y [{'meter': 1.0}], robot_pose_py_ [{'meter': 1.0}]
+df_constraint: odom.pose.pose.orientation.x [{'quaternion': 1.0}], orientation_x_ [{'quaternion': 1.0}]
+df_constraint: odom.pose.pose.orientation.y [{'quaternion': 1.0}], orientation_y_ [{'quaternion': 1.0}]
+df_constraint: odom.pose.pose.orientation.z [{'quaternion': 1.0}], orientation_z_ [{'quaternion': 1.0}]
+df_constraint: odom.pose.pose.orientation.w [{'quaternion': 1.0}], orientation_w_ [{'quaternion': 1.0}]
+df_constraint: odom.twist.twist.linear.x [{'second': -1.0, 'meter': 1.0}], robot_pose_vx_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: odom.twist.twist.linear.y [{'second': -1.0, 'meter': 1.0}], robot_pose_vy_ [{'second': -1.0, 'meter': 1.0}]
+df_constraint: odom.twist.twist.angular.x [{'second': -1.0}], ang_vel_x_ [{'second': -1.0}]
+df_constraint: odom.twist.twist.angular.y [{'second': -1.0}], ang_vel_y_ [{'second': -1.0}]
+df_constraint: odom.twist.twist.angular.z [{'second': -1.0}], ang_vel_z_ [{'second': -1.0}]
+df_constraint: orientation_x_ [{'quaternion': 1.0}], imu_msg.orientation.x [{'quaternion': 1.0}]
+df_constraint: orientation_y_ [{'quaternion': 1.0}], imu_msg.orientation.y [{'quaternion': 1.0}]
+df_constraint: orientation_z_ [{'quaternion': 1.0}], imu_msg.orientation.z [{'quaternion': 1.0}]
+df_constraint: orientation_w_ [{'quaternion': 1.0}], imu_msg.orientation.w [{'quaternion': 1.0}]
+df_constraint: ang_vel_x_ [{'second': -1.0}], imu_msg.angular_velocity.x [{'second': -1.0}]
+df_constraint: ang_vel_y_ [{'second': -1.0}], imu_msg.angular_velocity.y [{'second': -1.0}]
+df_constraint: ang_vel_z_ [{'second': -1.0}], imu_msg.angular_velocity.z [{'second': -1.0}]
+df_constraint: lin_acc_x_ [{'second': -2.0, 'meter': 1.0}], imu_msg.linear_acceleration.x [{'second': -2.0, 'meter': 1.0}]
+df_constraint: lin_acc_y_ [{'second': -2.0, 'meter': 1.0}], imu_msg.linear_acceleration.y [{'second': -2.0, 'meter': 1.0}]
+df_constraint: lin_acc_z_ [{'second': -2.0, 'meter': 1.0}], imu_msg.linear_acceleration.z [{'second': -2.0, 'meter': 1.0}]
+df_constraint: current_time [{'second': 1.0}], last_command_time_ [{'second': 1.0}]
+cf_constraint: value [{'radian': 1.0}] 3
+cf_constraint: value [{'radian': 1.0}] 3
+cf_constraint: value [{'radian': 1.0}] 3
+cf_constraint: msg.pan [{'degree_360': 1.0}] 1
+cf_constraint: pos_ref_pan_ [{'radian': 1.0}] 1
+cf_constraint: msg.tilt [{'degree_360': 1.0}] 1
+cf_constraint: pos_ref_tilt_ [{'radian': 1.0}] 1
+ks_constraint: a1 [{'radian': 1.0}]
+ks_constraint: a2 [{'radian': 1.0}]
+ks_constraint: a3 [{'radian': 1.0}]
+ks_constraint: a4 [{'radian': 1.0}]
+ks_constraint: robot_pose_pa_ [{'radian': 1.0}]
+nm_constraint: max [({}, 0.0)]
+nm_constraint: min [({}, 0.0)]
+nm_constraint: v_ref_x_ [({}, 0.0)]
+nm_constraint: v_ref_y_ [({}, 0.0)]
+nm_constraint: w_ref_ [({}, 0.0)]
+nm_constraint: v_ref_z_ [({}, 0.0)]
+nm_constraint: value [({}, 0.0)]
+nm_constraint: value [({}, 0.0)]
+nm_constraint: v_left_mps [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: summit_xl_wheel_diameter_ [({'meter': 1.0}, 0.8333333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: v_right_mps [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: linearSpeedXMps_ [({'second': -1.0, 'meter': 1.0}, 0.7083333333333334), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: angularSpeedRads_ [({'second': -1.0}, 0.7083333333333334), ({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5)]
+nm_constraint: summit_xl_d_tracks_m_ [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: epv [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: epw [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: epvant [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: epwant [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: kpv [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: kdv [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: kpw [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: kdw [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: dUl [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: dUr [({}, 0.0)]
+nm_constraint: limit [({}, 0.0)]
+nm_constraint: frw_ref_msg [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: flw_ref_msg [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: blw_ref_msg [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: brw_ref_msg [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: frw_ref_msg.data [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: flw_ref_msg.data [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: blw_ref_msg.data [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: brw_ref_msg.data [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v_frw_mps [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v_flw_mps [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v_blw_mps [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v_brw_mps [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: summit_xl_wheelbase_ [({'meter': 1.0}, 0.875), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: summit_xl_trackwidth_ [({'meter': 1.0}, 0.7083333333333334), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: wx1 [({}, 0.0)]
+nm_constraint: wy1 [({}, 0.0)]
+nm_constraint: wx2 [({}, 0.0)]
+nm_constraint: wy2 [({}, 0.0)]
+nm_constraint: wx3 [({}, 0.0)]
+nm_constraint: wy3 [({}, 0.0)]
+nm_constraint: wx4 [({}, 0.0)]
+nm_constraint: wy4 [({}, 0.0)]
+nm_constraint: limit [({}, 0.0)]
+nm_constraint: frw_ref_vel_msg [({'second': -1.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: flw_ref_vel_msg [({'second': -1.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: blw_ref_vel_msg [({'second': -1.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: brw_ref_vel_msg [({'second': -1.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: frw_ref_vel_msg.data [({'second': -1.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: flw_ref_vel_msg.data [({'second': -1.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: blw_ref_vel_msg.data [({'second': -1.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: brw_ref_vel_msg.data [({'second': -1.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: frw_ref_pos_msg [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: flw_ref_pos_msg [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: blw_ref_pos_msg [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: brw_ref_pos_msg [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: frw_ref_pos_msg.data [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: flw_ref_pos_msg.data [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: blw_ref_pos_msg.data [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: brw_ref_pos_msg.data [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: scissor_ref_pos [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: desired_freq_ [({'second': -1.0}, 0.6666666666666666), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: scissor_ref_pos_msg [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: scissor_ref_pos_msg.data [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: pan_ref_pos_msg [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: tilt_ref_pos_msg [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: pan_ref_pos_msg.data [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: pos_ref_pan_ [({'meter': 1.0}, 0.625), ({'radian': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5)]
+nm_constraint: tilt_ref_pos_msg.data [({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: pos_ref_tilt_ [({'radian': 1.0}, 0.6666666666666666), ({'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5)]
+nm_constraint: robot_pose_vx_ [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: robot_pose_pa_ [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: robot_pose_vy_ [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v1y [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v1x [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v2x [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v2y [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v3y [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v3x [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v4y [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: v4x [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: fSamplePeriod [({'second': 1.0}, 0.75), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: ang_vel_z_ [({'second': -1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: robot_pose_px_ [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: robot_pose_py_ [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: orientation_x_ [({'quaternion': 1.0}, 0.9583333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: orientation_y_ [({'quaternion': 1.0}, 0.9583333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: orientation_z_ [({'quaternion': 1.0}, 0.9583333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: orientation_w_ [({'quaternion': 1.0}, 0.9583333333333333), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: odom.pose.covariance[i*6+i] [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: ang_vel_x_ [({'second': -1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: ang_vel_y_ [({'second': -1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: odom.twist.covariance[6*i+i] [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: linearSpeedYMps_ [({'second': -1.0, 'meter': 1.0}, 0.7083333333333334), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: lin_acc_y_ [({'second': -2.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: lin_acc_z_ [({'second': -2.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: lin_acc_x_ [({'second': -2.0, 'meter': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: min_freq [({'second': -1.0}, 0.6666666666666666), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: max_freq [({'second': -1.0}, 0.6666666666666666), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: msg.pan [({'radian': 1.0}, 0.625), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: msg.tilt [({'radian': 1.0}, 0.6666666666666666), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5)]
+nm_constraint: response.ret [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: request.mode [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: diff [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+nm_constraint: response.mode [({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5), ({'quaternion': 1.0}, 0.5), ({'degree_celsius': 1.0}, 0.5)]
+</pre></p>
+                                </div><!--//section-block-->
+                            
+                                <div id="ex4"  class="section-block">
+                                    <h3 class="block-title">Example 4: Run <b>phys</b> on your own code:</h3>
+                                    <div class="code-block">
+                                        <p>Lets say you want to run <b>phys</b> on <b>MY_FILE.cpp</b>.  Navigate in terminal to the directory containing the source your want to analyze and enter:</p>
+                                        <p><code>docker run -v "$(pwd)":/data phys /data/MY_FILE.cpp</code></p>
+                                        <p>Even better, navigate to the root directory that includes <b>MY_FILE.cpp</b> and all the include files referenced by <b>MY_FILE.cpp</b>.  Lets assume that directory is <b>MY_SOURCE_CODE_DIR</b>.  Navigate in terminal to <b>MY_SOURCE_CODE_DIR</b> and enter:</p>
+                                        <p><code>docker run -v "$(pwd)":/data phys /data/MY_SOURCE_CODE_DIR/MY_FILE.cpp</code></p>
+                                        <p><b>Phys</b> will use information available in header files referenced by MY_FILE.cpp and contained within <b>MY_SOURCE_CODE_DIR</b> and referenced by <b>MY_FILE.cpp</b></p>
+                                    </div><!--//code-block-->
+                                    </p>
+
+                                </div><!--//section-block-->
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar hidden-xs">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                                <li><a class="scrollto" href="#download-section">Download</a></li>
+                                <li>
+                                    <a class="scrollto" href="#installation-section">Installation</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#step1">Step One</a></li>
+                                        <li><a class="scrollto" href="#step2">Step Two</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#example-section">Examples</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#ex1">PU Inconsistency</a></li>
+                                        <li><a class="scrollto" href="#ex2">PU Abstract Type Inference</a></li>
+                                        <li><a class="scrollto" href="#ex3">Constraints</a></li>
+                                        <li><a class="scrollto" href="#ex4">Run <b>phys</b> on your own code</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+        <div id="promo-block" class="promo-block">
+            <div class="container">
+                <div class="promo-block-inner">
+                </div><!--//promo-block-inner-->  
+            </div><!--//container-->
+        </div><!--//promo-block-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <!--<small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" targe="_blank">Xiaoying Riley</a> for developers</small>-->
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

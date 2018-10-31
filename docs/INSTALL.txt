@@ -1,0 +1,54 @@
+FSE2018 Artifact Submission INSTALL
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+STEP ONE:
+Install Docker. The Dockerfile for phys has been tested with Ubuntu 16.04.
+
+
+STEP TWO:
+From the command line, build phys with docker:
+
+docker build . -t phys
+
+
+TEST THE INSTALLATION:
+From a terminal in the root directory, enter:
+
+docker run -v "$(pwd)"/data:/data phys /data/summit_xl_sim/summit_xl_robot_control/src/summit_xl_robot_control.cpp
+
+You should see the output of phys, including:
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ADDITION OF INCOMPATIBLE UNITS
+Addition of inconsistent units on line 576. Attempting to add [{'second': -1.0}] to [{'second': -1.0, 'meter': 1.0}].
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ADDITION OF INCOMPATIBLE UNITS
+Addition of inconsistent units on line 577. Attempting to add [{'second': -1.0}] to [{'second': -1.0, 'meter': 1.0}].
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ADDITION OF INCOMPATIBLE UNITS
+Addition of inconsistent units on line 578. Attempting to add [{'second': -1.0}] to [{'second': -1.0, 'meter': 1.0}].
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ADDITION OF INCOMPATIBLE UNITS
+Addition of inconsistent units on line 579. Attempting to add [{'second': -1.0}] to [{'second': -1.0, 'meter': 1.0}].
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 576. Units: [{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 577. Units: [{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 578. Units: [{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 579. Units: [{'second': -1.0}, {'second': -1.0, 'meter': 1.0}]
+file:/data/summit_xl_robot_control.cpp, strong:8,weak:1,
+
+
+This means phys is installed and ready to run.
+
+See index.html, especially the QuickStart+Examples page, for more examples and details.
+
+

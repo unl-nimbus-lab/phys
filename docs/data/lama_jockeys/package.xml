@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package format="2">
+  <name>lama_jockeys</name>
+  <version>0.1.3</version>
+  <description>The lama_jockeys package contains base classes for learning,
+  localizing, and navigating jockeys.</description>
+
+  <maintainer email="gael.ecorchard@ciirc.cvut.cz">Gaël Ecorchard</maintainer>
+
+
+  <license>BSD</license>
+
+
+  <url type="website">http://wiki.ros.org/lama_jockeys</url>
+  <url type="repository">https://github.com/lama-imr/lama.git</url>
+  <url type="bugtracker">https://github.com/lama-imr/lama/issues</url>
+
+
+  <author email="gael.ecorchard@ciirc.cvut.cz">Gaël Ecorchard</author>
+  <author email="kosnar@labe.felk.cvut.cz">Karel Košnar</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>actionlib</depend>
+  <depend>actionlib_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>lama_interfaces</depend>
+  <depend>lama_msgs</depend>
+  <depend>message_generation</depend>
+  <depend>roscpp</depend>
+
+  <export>
+  </export>
+</package>

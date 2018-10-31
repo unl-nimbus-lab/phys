@@ -1,0 +1,31 @@
+controller_frequency: 10.0
+ChannelController:
+  safe_waypoint_channel_width: 0.5
+  safe_channel_width: 0.4
+
+  min_get_to_safe_dist_time: 3.0
+  max_get_to_safe_dist_time: 10.0
+
+  waypoint_reached_dist: 0.3
+  waypoint_reached_angle: 7.0
+
+  goal_reached_dist: 0.15
+  goal_reached_angle: 0.17
+
+  min_tv: 0.05
+  max_tv: 1.0
+  min_rv: 0.0
+  max_rv: 2.3
+  min_inplace_rv: 0.1
+
+  stopped_tv: 0.05
+  stopped_rv: 0.1
+
+  max_accel_tv: 2.0
+  max_accel_rv: 2.3
+
+  wait_for_obstacles_time: 15.0
+  no_progress_hard_clear_time: 10.0
+
+  visualize_voronoi: true
+

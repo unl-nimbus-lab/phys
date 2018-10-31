@@ -1,0 +1,63 @@
+0x7faca381c330, theta_, {'radian': 1.0}
+0x7faca381c630, last_sent_x_, {'second': -1.0, 'meter': 1.0}
+0x7faca381c690, last_sent_r_, {'second': -1.0}
+0x7faca381c810, right_last_timestamp_, {'second': 1.0}
+0x7faca381c7b0, left_last_timestamp_, {'second': 1.0}
+0x7faca381d1d0, manager, {'dimensionless': 1.0}
+0x7faca381d170, nh, {'dimensionless': 1.0}
+0x7faca381bc10, names, {'dimensionless': 1.0}
+0x7faca381d770, nh, {'dimensionless': 1.0}
+0x7faca381bc70, name_value, {'dimensionless': 1.0}
+0x7faca381bcd0, lock, {'dimensionless': 1.0}
+0x7faca3815020, i, {'dimensionless': 1.0}
+0x7faca3815320, i, {'dimensionless': 1.0}
+0x7faca38158c0, a, {'dimensionless': 1.0}
+0x7faca381bdf0, lock, {'dimensionless': 1.0}
+0x7faca3815f30, i, {'dimensionless': 1.0}
+0x7faca381bb50, active_, {'dimensionless': 1.0}
+0x7faca381be50, lock, {'dimensionless': 1.0}
+0x7faca3816450, i, {'dimensionless': 1.0}
+0x7faca381ba30, update_lock_, {'dimensionless': 1.0}
+0x7faca381bf10, lock, {'dimensionless': 1.0}
+0x7faca381bf70, nh, {'dimensionless': 1.0}
+0x7faca381ba90, loader_, {'dimensionless': 1.0}
+0x7faca381c030, c, {'dimensionless': 1.0}
+0x7faca381baf0, controllers_, {'dimensionless': 1.0}
+0x7faca381dad0, controller, {'dimensionless': 1.0}
+0x7faca3817420, i, {'dimensionless': 1.0}
+0x7faca38175d0, j, {'dimensionless': 1.0}
+0x7faca381c0f0, lock, {'dimensionless': 1.0}
+0x7faca3817c40, i, {'dimensionless': 1.0}
+0x7faca381db30, req, {'dimensionless': 1.0}
+0x7faca3817df0, i, {'dimensionless': 1.0}
+0x7faca381dc50, manager, {'dimensionless': 1.0}
+0x7faca381dbf0, nh, {'dimensionless': 1.0}
+0x7faca381c390, moving_threshold_, {'dimensionless': 1.0}
+0x7faca381cd50, t, {'second': 1.0}
+0x7faca381c3f0, max_velocity_x_, {'second': -1.0, 'meter': 1.0}
+0x7faca381c450, max_velocity_r_, {'second': -1.0}
+0x7faca381cdb0, n, {'dimensionless': 1.0}
+0x7faca381c570, desired_x_, {'second': -1.0, 'meter': 1.0}
+0x7faca381c5d0, desired_r_, {'second': -1.0}
+0x7faca381b910, manager_, {'dimensionless': 1.0}
+0x7faca381c4b0, max_acceleration_x_, {'second': -2.0, 'meter': 1.0}
+0x7faca381c510, max_acceleration_r_, {'second': -2.0}
+0x7faca381ce10, dx, {'second': -1.0, 'meter': 1.0}
+0x7faca381ce70, dr, {'second': -1.0}
+0x7faca381ced0, left_dx, {'meter': 1.0}
+0x7faca381c6f0, left_last_position_, {'radian': 1.0}
+0x7faca381cf30, right_dx, {'meter': 1.0}
+0x7faca381c750, right_last_position_, {'radian': 1.0}
+0x7faca381cf90, left_vel, {'second': -1.0, 'meter': 1.0}
+0x7faca381cff0, right_vel, {'second': -1.0, 'meter': 1.0}
+0x7faca381d050, d, {'meter': 1.0}
+0x7faca381c270, track_width_, {'meter': 1.0}
+0x7faca381d0b0, th, {'radian': 1.0}
+0x7faca381c990, odom_, {'dimensionless': 1.0}
+0x7faca381d110, transform, {'dimensionless': 1.0}
+0x7faca381cab0, broadcaster_, {'dimensionless': 1.0}
+0x7faca381c2d0, radians_per_meter_, {'radian': 1.0, 'meter': -1.0}
+0x7faca381c1b0, left_, {'dimensionless': 1.0}
+0x7faca381def0, left, {'second': -1.0, 'meter': 1.0}
+0x7faca381df50, right, {'second': -1.0, 'meter': 1.0}
+0x7faca381c210, right_, {'dimensionless': 1.0}

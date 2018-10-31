@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>phys: data</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/lightbox/dist/ekko-lightbox.min.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+.divTable pre {
+    font-size: 11px;
+    max-width: 500px;
+    overflow-wrap: break-word;
+}
+      div.blueTable {
+        border: 1px solid #1C6EA4;
+        background-color: #EEEEEE;
+        width: 100%;
+        text-align: left;
+        border-collapse: collapse;
+        font-size: 11px;
+      }
+.divTable.blueTable .divTableCell, .divTable.blueTable .divTableHead {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+.divTable.blueTable .divTableBody .divTableCell {
+  font-size: 13px;
+}
+.divTable.blueTable .divTableRow:nth-child(even) {
+  background: #D0E4F5;
+}
+.divTable.blueTable .divTableHeading {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+.divTable.blueTable .divTableHeading .divTableHead {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #D0E4F5;
+}
+.divTable.blueTable .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+.blueTable .tableFootStyle {
+  font-size: 14px;
+}
+.blueTable .tableFootStyle .links {
+	 text-align: right;
+}
+.blueTable .tableFootStyle .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.blueTable.outerTableFooter {
+  border-top: none;
+}
+.blueTable.outerTableFooter .tableFootStyle {
+  padding: 3px 5px; 
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+
+</style>
+    
+</head> 
+
+<body class="body-pink">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="../index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                        <span class="text-bold">phys</span>
+                        <span class="text-highlight">: Probabilistic Physical Unit Assignment and Inconsistency Detection</span>
+                        </a>
+                    </h1>
+                </div><!--//branding-->
+                <ol class="breadcrumb">
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="active">Data</li>
+                </ol>
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><span aria-hidden="true" class="icon icon_puzzle_alt"></span> Data</h1>
+                    <!--<div class="meta"><i class="fa fa-clock-o"></i> Last updated: Jan 25th, 2016</div>-->
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div >
+                    <!--<div class="doc-content">-->
+                        <div class="content-inner">
+                            <section id="dashboards" class="doc-section">
+<p>QuickLinks:</p>
+<ul>
+<li> <a class="scrollto" href="#fig1">File with inconsistency Data</a> (shown in the paper, Figure 1) 
+<li> <a class="scrollto" href="#tab4">30 Files</a> used for Physical Unit (PU) Abstract Type Inference. (Table 4) 
+<li> <a class="scrollto" href="#tab6">18 Files</a> used during development with physical unit inconsistencies. (Table 6)
+<li> <a class="scrollto" href="#tab7">60 random files</a> with inconsistencies used to evaluate <b>phys</b>'s TP/FP rate. (Table 7)
+</ul>
+                                <h2 id="fig1" class="section-title">Data file for Figure 1</h2>
+                                <p>This is the data used in Figure 1. This file contains a physical unit inconsistency on line 576.</p>
+<p>To run this code, see <a href='start.html#ex1'>example #1</a> from the <a href="start.html">QuickStart page</a>.</p>
+                                <div class="section-block">
+
+                                  <div class="divTable blueTable">
+                                    <div class="divTableHeading">
+                                        <div class="divTableRow">
+                                          <div class="divTableHead">FILE NAME</div>
+                                          <div class="divTableHead">FILE PATH / REPO</div>
+                                        </div>
+                                    </div>
+
+<div class="divTableRow">
+<div class="divTableCell">summit_xl_robot_control.cpp</a></div>
+<div class="divTableCell">/data/summit_xl_sim/summit_xl_robot_control/src/summit_xl_robot_control.cpp<br> <a href="https://github.com/RobotnikAutomation/summit_xl_sim/blob/hydro-multi/summit_xl_robot_control/src/summit_xl_robot_control.cpp#L576">https://github.com/RobotnikAutomation/summit_xl_sim/blob/hydro-multi/summit_xl_robot_control/src/summit_xl_robot_control.cpp#L576</a></div>
+</div>
+                                </div> <!-- TABLE -->
+
+                                    <div class="code-block">
+                                        <p>To run <b>phys</b> on this file, navigate to the repo root directory and enter: </p>
+                                        <p><code>docker run -v "$(pwd)"/data:/data phys /data/summit_xl_sim/summit_xl_robot_control/src/summit_xl_robot_control.cpp</code></p>
+                                    </div><!--//code-block-->
+                                </div> <!-- SECTION-BLOCK -->
+
+                                <h2 id="tab4" class="section-title">Files used for Physical Unit (PU) Abstract Type Inference (Table 4)</h2>
+                                <p>These files are used to evaluate how well <b>phys</b> can infer units for variables.  
+This command shows each variable name that can have units along with a list of physical unit types and a likelihood per type.</p>
+                                    <div class="code-block">
+                                        <p>To run <b>phys</b> on the first file from this list: </p>
+                                        <p><code>docker run -v "$(pwd)"/data:/data phys /data/aladdin_working/components/perception/Perception.cpp --print_variable_types</code></p>
+                                    </div><!--//code-block-->
+<p>For example, one line of the expected output is:</p>
+<pre>
+angle_b:
+[({'radian': 1.0}, 0.9193548387096537), ({'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}, 0.5833333333333333), ({'quaternion': 1.0}, 0.5833333333333333), ({'degree_celsius': 1.0}, 0.5833333333333333), ({'meter': 1.0}, 0.5833333333333333), ({'second': 1.0}, 0.5833333333333333), ({'second': -1.0}, 0.5833333333333333), ({'second': -2.0, 'meter': 1.0, 'kilogram': 1.0}, 0.5833333333333333), ({'second': -2.0, 'meter': 2.0, 'kilogram': 1.0}, 0.5833333333333333), ({'second': -1.0, 'meter': 1.0}, 0.5833333333333333), ({'degree_360': 1.0}, 0.5833333333333333), ({'second': 1.0, 'meter': 1.0}, 0.5)]
+</pre>
+<p>This means for variable <b>angle_b</b>, the physical unit type <b>radians</b> is 91.9% likely.</p>
+
+                                <div class="section-block">
+
+
+                                  <div class="divTable blueTable">
+                                    <div class="divTableHeading">
+                                        <div class="divTableRow">
+                                          <div class="divTableHead">FILE NAME</div>
+                                          <div class="divTableHead">FILE PATH / REPO</div>
+                                        </div>
+                                    </div>
+
+
+<div class="divTableRow">
+<div class="divTableCell">Perception.cpp</a></div>
+<div class="divTableCell">/data/aladdin_working/components/perception/Perception.cpp<br> <a href="https://github.com/mjaein/aladdin_working">https://github.com/mjaein/aladdin_working</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">summit_xl_robot_control.cpp</a></div>
+<div class="divTableCell">/data/ArduinoConroller/summit-xl-ros-stack-read-only/trunk/tags/summit_xl_sim_groovy_v1.0/summit_xl_robot_control/src/summit_xl_robot_control.cpp<br> <a href="https://github.com/mwimble/ArduinoConroller">https://github.com/mwimble/ArduinoConroller</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">ard_node.cpp</a></div>
+<div class="divTableCell">/data/bayesian_compact_ware/ard/src/ard_node.cpp<br> <a href="https://github.com/ashish-kb/bayesian_compact_ware">https://github.com/ashish-kb/bayesian_compact_ware</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">collvoid_local_planner.cpp</a></div>
+<div class="divTableCell">/data/collvoid/collvoid_local_planner/src/collvoid_local_planner.cpp<br> <a href="https://github.com/daenny/collvoid">https://github.com/daenny/collvoid</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">motor_control_hc.cpp</a></div>
+<div class="divTableCell">/data/de-floribot-software/phidgets/src/motor_control_hc.cpp<br> <a href="https://github.com/TorstenHeverhagen/de-floribot-software">https://github.com/TorstenHeverhagen/de-floribot-software</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">traj_builder.cpp</a></div>
+<div class="divTableCell">/data/Epsilon_376/Epsilon_376-master/traj_builder/src/traj_builder.cpp<br> <a href="https://github.com/JJJVic/Epsilon_376">https://github.com/JJJVic/Epsilon_376</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">follow.cpp</a></div>
+<div class="divTableCell">/data/follow_ros/src/follow/src/follow.cpp<br> <a href="https://github.com/robofisshy/follow_ros">https://github.com/robofisshy/follow_ros</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">turtlebot_example_node.cpp</a></div>
+<div class="divTableCell">/data/FrenchVanilla/src/turtlebot_example/src/turtlebot_example_node.cpp<br> <a href="https://github.com/LordBismaya/FrenchVanilla">https://github.com/LordBismaya/FrenchVanilla</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">odometry.cpp</a></div>
+<div class="divTableCell">/data/gki_navigation/gki_odometry/src/odometry.cpp<br> <a href="https://github.com/GKIFreiburg/gki_navigation">https://github.com/GKIFreiburg/gki_navigation</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">motor_and_sensors_controller.cpp</a></div>
+<div class="divTableCell">/data/jaguar_base/src/motor_and_sensors_controller.cpp<br> <a href="https://github.com/gstavrinos/jaguar_base">https://github.com/gstavrinos/jaguar_base</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">base_driver.cpp</a></div>
+<div class="divTableCell">/data/kaqi_driver/src/base_driver.cpp<br> <a href="https://github.com/lzhzh/kaqi_driver">https://github.com/lzhzh/kaqi_driver</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">placement_wrt_workspace_action_server.cpp</a></div>
+<div class="divTableCell">/data/research-camp-5/raw_navigation/raw_base_placement/ros/nodes/placement_wrt_workspace_action_server.cpp<br> <a href="https://github.com/RC5Group6/research-camp-5">https://github.com/RC5Group6/research-camp-5</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">action.cpp</a></div>
+<div class="divTableCell">/data/romeo_grasper/src/romeo_moveit_actions/action.cpp<br> <a href="https://github.com/ros-aldebaran/romeo_moveit_actions">https://github.com/ros-aldebaran/romeo_moveit_actions</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">simulation_functions.cpp</a></div>
+<div class="divTableCell">/data/ROS-CATEC/CATEC_ugv/src/link/simulation_functions.cpp<br> <a href="https://github.com/Bardo91/ROS-CATEC">https://github.com/Bardo91/ROS-CATEC</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">labbot_teleoperation_twist.cpp</a></div>
+<div class="divTableCell">/data/ROS-labbot/labbot_ws/src/labbot/src/labbot_teleoperation_twist.cpp<br> <a href="https://github.com/PUTvision/ROS-labbot">https://github.com/PUTvision/ROS-labbot</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">twist_marker.cpp</a></div>
+<div class="divTableCell">/data/TIAGo-ROS/twist_mux/src/twist_marker.cpp<br> <a href="https://github.com/eborghi10/TIAGo-ROS">https://github.com/eborghi10/TIAGo-ROS</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">trajectory_planner_ros.cpp</a></div>
+<div class="divTableCell">/data/TRIN_EARL/navigation/base_local_planner/src/trajectory_planner_ros.cpp<br> <a href="https://github.com/jinpyojeon/TRIN_EARL">https://github.com/jinpyojeon/TRIN_EARL</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">QuadScripts.cpp</a></div>
+<div class="divTableCell">/data/usma_optitrack/src/QuadScripts.cpp<br> <a href="https://github.com/westpoint-robotics/usma_optitrack">https://github.com/westpoint-robotics/usma_optitrack</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">viconxbee.cpp</a></div>
+<div class="divTableCell">/data/viconxbee/vicon/src/viconxbee.cpp<br> <a href="https://github.com/wang-chen/viconxbee">https://github.com/wang-chen/viconxbee</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">base_controller.cpp</a></div>
+<div class="divTableCell">/data/ubr1_preview/ubr_controllers/src/base_controller.cpp<br> <a href="https://github.com/unboundedrobotics/ubr1_preview/tree/master/ubr1_gazebo">https://github.com/unboundedrobotics/ubr1_preview/tree/master/ubr1_gazebo</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">channel_controller.cpp</a></div>
+<div class="divTableCell">/data/gki_navigation/channel_controller/src/channel_controller.cpp<br> <a href="https://github.com/GKIFreiburg/gki_navigation">https://github.com/GKIFreiburg/gki_navigation</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">interpolater.cpp</a></div>
+<div class="divTableCell">/data/final_code_RISE/videofeed/src/interpolater.cpp<br> <a href="https://github.com/Innovation-Cell/final_code_RISE">https://github.com/Innovation-Cell/final_code_RISE</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">navigating_jockey.cpp</a></div>
+<div class="divTableCell">/data/lama_jockeys/src/navigating_jockey.cpp<br> <a href="https://github.com/lama-imr/lama">https://github.com/lama-imr/lama</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">simple_pose.cpp</a></div>
+<div class="divTableCell">/data/alpha_autopilot/alpha_localization/src/simple_pose.cpp<br> <a href="https://github.com/kentegrate/alpha_autopilot">https://github.com/kentegrate/alpha_autopilot</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">summit_xl_joint_state.cpp</a></div>
+<div class="divTableCell">/data/summit_xl_sim_groovy_v1.0/summit_xl_joint_state/src/summit_xl_joint_state.cpp<br> <a href="https://github.com/grafoteka/summit-xl-ros-stack">https://github.com/grafoteka/summit-xl-ros-stack</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">summit_xl_joystick.cpp</a></div>
+<div class="divTableCell">/data/summit_xl_sim_groovy_v1.0/summit_xl_joystick/src/summit_xl_joystick.cpp<br> <a href="https://github.com/grafoteka/summit-xl-ros-stack">https://github.com/grafoteka/summit-xl-ros-stack</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">summit_xl_waypoints.cpp</a></div>
+<div class="divTableCell">/data/summit_xl_sim_groovy_v1.0/summit_xl_waypoints/src/summit_xl_waypoints.cpp<br> <a href="https://github.com/grafoteka/summit-xl-ros-stack">https://github.com/grafoteka/summit-xl-ros-stack</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">twist_mux.cpp</a></div>
+<div class="divTableCell">/data/twist_mux/src/twist_mux.cpp<br> <a href="https://github.com/ros-teleop/twist_mux.git">https://github.com/ros-teleop/twist_mux.git</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">twist_mux_diagnostics.cpp</a></div>
+<div class="divTableCell">/data/twist_mux/src/twist_mux_diagnostics.cpp<br> <a href="https://github.com/ros-teleop/twist_mux.git">https://github.com/ros-teleop/twist_mux.git</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">vel_scheduler.cpp</a></div>
+<div class="divTableCell">/data/cwru-ros-pkg/catkin/src/cwru_376_student/wsn_examples/example_robot_commander/src/vel_scheduler.cpp<br> <a href="https://github.com/cwru-robotics/cwru-ros-pkg">https://github.com/cwru-robotics/cwru-ros-pkg</a></div>
+</div>
+
+
+
+                                </div> <!-- TABLE -->
+                                </div> <!-- SECTION-BLOCK -->
+
+                                <h2 id="tab6" class="section-title">Files used for Physical Unit Inconsistencies (Table 6) </h2>
+
+                                <p>These files are used during development to test <b>phys</b>. 
+                                    <div class="code-block">
+                                        <p>To run <b>phys</b> on the first file from this list: </p>
+                                        <p><code>docker run -v "$(pwd)"/data:/data phys /data/bayesian_compact_ware/ard/src/ard_node.cpp</code></p>
+                                    </div><!--//code-block-->
+<p>For example, one line of the expected output is:</p>
+<pre>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 323. Units: [{'quaternion': 1.0}, {'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 324. Units: [{'quaternion': 1.0}, {'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 325. Units: [{'quaternion': 1.0}, {'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 334. Units: [{'meter': 1.0}, {'quaternion': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 335. Units: [{'meter': 1.0}, {'quaternion': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 336. Units: [{'meter': 1.0}, {'quaternion': 1.0}]
+file:/data/bayesian_compact_ware/ard/src/ard_node.cpp, strong:6,
+</pre>
+<p>This means there are 6 physical unit inconsistency, all of the type 'MULTIPLE UNITS'. The first inconsistency is at line 323 where a variable is assigned both <b>meter</b> and <b>quaternion</b>.</p>
+
+                                <div class="section-block">
+                                  <div class="divTable blueTable">
+                                    <div class="divTableHeading">
+                                        <div class="divTableRow">
+                                          <div class="divTableHead">FILE NAME</div>
+                                          <div class="divTableHead">TP</div>
+                                          <div class="divTableHead">FP</div>
+                                          <div class="divTableHead">FILE PATH / REPO</div>
+                                        </div>
+                                    </div>
+
+
+<div class="divTableRow">
+<div class="divTableCell">ard_node.cpp</a></div>
+<div class="divTableCell">6</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/bayesian_compact_ware/ard/src/ard_node.cpp<br> <a href="https://github.com/ashish-kb/bayesian_compact_ware">https://github.com/ashish-kb/bayesian_compact_ware</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">collvoid_local_planner.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/collvoid/collvoid_local_planner/src/collvoid_local_planner.cpp<br> <a href="https://github.com/daenny/collvoid">https://github.com/daenny/collvoid</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">motor_control_hc.cpp</a></div>
+<div class="divTableCell">7</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/de-floribot-software/phidgets/src/motor_control_hc.cpp<br> <a href="https://github.com/TorstenHeverhagen/de-floribot-software">https://github.com/TorstenHeverhagen/de-floribot-software</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">traj_builder.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/Epsilon_376/Epsilon_376-master/traj_builder/src/traj_builder.cpp<br> <a href="https://github.com/JJJVic/Epsilon_376">https://github.com/JJJVic/Epsilon_376</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">follow.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/follow_ros/src/follow/src/follow.cpp<br> <a href="https://github.com/robofisshy/follow_ros">https://github.com/robofisshy/follow_ros</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">turtlebot_example_node.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/FrenchVanilla/src/turtlebot_example/src/turtlebot_example_node.cpp<br> <a href="https://github.com/LordBismaya/FrenchVanilla">https://github.com/LordBismaya/FrenchVanilla</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">odometry.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/gki_navigation/gki_odometry/src/odometry.cpp<br> <a href="https://github.com/GKIFreiburg/gki_navigation">https://github.com/GKIFreiburg/gki_navigation</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">motor_and_sensors_controller.cpp</a></div>
+<div class="divTableCell">4</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/jaguar_base/src/motor_and_sensors_controller.cpp<br> <a href="https://github.com/gstavrinos/jaguar_base">https://github.com/gstavrinos/jaguar_base</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">base_driver.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/kaqi_driver/src/base_driver.cpp<br> <a href="https://github.com/lzhzh/kaqi_driver">https://github.com/lzhzh/kaqi_driver</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">placement_wrt_workspace_action_server.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">/data/research-camp-5/raw_navigation/raw_base_placement/ros/nodes/placement_wrt_workspace_action_server.cpp<br> <a href="https://github.com/RC5Group6/research-camp-5">https://github.com/RC5Group6/research-camp-5</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">action.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/romeo_grasper/src/romeo_moveit_actions/action.cpp<br> <a href="https://github.com/ros-aldebaran/romeo_moveit_actions">https://github.com/ros-aldebaran/romeo_moveit_actions</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">simulation_functions.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/ROS-CATEC/CATEC_ugv/src/link/simulation_functions.cpp<br> <a href="https://github.com/Bardo91/ROS-CATEC">https://github.com/Bardo91/ROS-CATEC</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">labbot_teleoperation_twist.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/ROS-labbot/labbot_ws/src/labbot/src/labbot_teleoperation_twist.cpp<br> <a href="https://github.com/PUTvision/ROS-labbot">https://github.com/PUTvision/ROS-labbot</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">twist_marker.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/TIAGo-ROS/twist_mux/src/twist_marker.cpp<br> <a href="https://github.com/eborghi10/TIAGo-ROS">https://github.com/eborghi10/TIAGo-ROS</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">trajectory_planner_ros.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/TRIN_EARL/navigation/base_local_planner/src/trajectory_planner_ros.cpp<br> <a href="https://github.com/jinpyojeon/TRIN_EARL">https://github.com/jinpyojeon/TRIN_EARL</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">QuadScripts.cpp</a></div>
+<div class="divTableCell">4</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/usma_optitrack/src/QuadScripts.cpp<br> <a href="https://github.com/westpoint-robotics/usma_optitrack">https://github.com/westpoint-robotics/usma_optitrack</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">viconxbee.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/viconxbee/vicon/src/viconxbee.cpp<br> <a href="https://github.com/wang-chen/viconxbee">https://github.com/wang-chen/viconxbee</a></div>
+</div>
+
+
+                                </div> <!-- TABLE -->
+                                </div> <!-- SECTION-BLOCK -->
+
+                                <div class="section-block">
+                                <h2 id="tab7" class="section-title">Files used for Physical Unit Inconsistencies from 60-File Set (Table 7) </h2>
+
+                                <p>These files were randomly selected from 500+ files with <b>phys</b> inconsistencies and are used to evaluate how well <b>phys</b> detects physical unit (PU) inconsistencies.</p>
+                                    <div class="code-block">
+                                        <p>To run <b>phys</b> on the first file from this list: </p>
+                                        <p><code>docker run -v "$(pwd)"/data:/data phys /data/kaqi_driver/src/base_driver.cpp</code></p>
+                                    </div><!--//code-block-->
+<p>For example, one line of the expected output is:</p>
+<pre>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 883. Units: [{'meter': 1.0}, {'second': -1.0, 'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 884. Units: [{'meter': 1.0}, {'second': -1.0, 'meter': 1.0}]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+MULTIPLE UNITS FOR VARIABLE
+Assignment of multiple units on line 885. Units: [{'meter': 1.0}, {'second': -1.0}]
+file:/data/kaqi_driver/src/base_driver.cpp, strong:3,
+</pre>
+<p></p>
+
+
+                                  <div class="divTable blueTable">
+                                    <div class="divTableHeading">
+                                        <div class="divTableRow">
+                                          <div class="divTableHead">FILE NAME</div>
+                                          <div class="divTableHead">TP</div>
+                                          <div class="divTableHead">FP</div>
+                                          <div class="divTableHead">FILE PATH / REPO</div>
+                                        </div>
+                                    </div>
+
+
+<div class="divTableRow">
+<div class="divTableCell">base_driver.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/kaqi_driver/src/base_driver.cpp<br> <a href="https://github.com/lzhzh/kaqi_driver">https://github.com/lzhzh/kaqi_driver</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">summit_xl_robot_control.cpp</a></div>
+<div class="divTableCell">8</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/ArduinoConroller/summit-xl-ros-stack-read-only/trunk/tags/summit_xl_sim_groovy_v1.0/summit_xl_robot_control/src/summit_xl_robot_control.cpp<br> <a href="https://github.com/mwimble/ArduinoConroller">https://github.com/mwimble/ArduinoConroller</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">move_in_elevator.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">/data/aidu/aidu_elevator/src/actions/move_in_elevator.cpp<br> <a href="https://github.com/rjagerman/aidu">https://github.com/rjagerman/aidu</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">quad_node.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">/data/asctec_pos_control/pc_asctec_sim/src/quad_node.cpp<br> <a href="https://github.com/UVa-StarLab/asctec_pos_control">https://github.com/UVa-StarLab/asctec_pos_control</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">waypoint_publisher_node.cpp</a></div>
+<div class="divTableCell">4</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/AutoNavQuad/quad_control/src/nodes/waypoint_publisher_node.cpp<br> <a href="https://github.com/wilselby/ROS_quadrotor_simulator">https://github.com/wilselby/ROS_quadrotor_simulator</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">at_odom_sim_node.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/cargo-ants-ros/cargo-ants-ros-pkgs/at_odom_sim/src/at_odom_sim_node.cpp<br> <a href="https://github.com/jenniferdavid/cargo-ants-ros">https://github.com/jenniferdavid/cargo-ants-ros</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">cpr_slider.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/cpr_robots_driver/cpr_robots_hwinterface/src/cpr_slider.cpp<br> <a href="https://github.com/srv/cpr_robots_driver">https://github.com/srv/cpr_robots_driver</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">quad_threads.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/AGNC-Lab_Quad/multithreaded/quad_threads.cpp<br> <a href="https://github.com/AGNC-Lab/Quad">https://github.com/AGNC-Lab/Quad</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">offb_node.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/crossover_nav/src/offb_node.cpp<br> <a href="https://github.com/tdnet12434/crossover_nav">https://github.com/tdnet12434/crossover_nav</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">virtual_trajectory_tracking.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/cws/src/hitwall/src/virtual_trajectory_tracking.cpp<br> <a href="https://github.com/rafafigueroa/cws">https://github.com/rafafigueroa/cws</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">behind_leader.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">/data/cws/src/quad/src/behind_leader.cpp<br> <a href="https://github.com/rafafigueroa/cws">https://github.com/rafafigueroa/cws</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">distance.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/eklavya-2015/SLAM/src/distance.cpp<br> <a href="https://github.com/AGV-IIT-KGP/eklavya-2015">https://github.com/AGV-IIT-KGP/eklavya-2015</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">human_pose_prediction.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/hanp_prediction/src/human_pose_prediction.cpp<br> <a href="https://github.com/harmishhk/hanp_prediction">https://github.com/harmishhk/hanp_prediction</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">CollisionDetection.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/haptic_teleoperation/src/CollisionDetection.cpp<br> <a href="https://github.com/kucars/haptic_teleoperation">https://github.com/kucars/haptic_teleoperation</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">eband_local_planner.cpp</a></div>
+<div class="divTableCell">33</div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">/data/Husky_robot_packages/eband_local_planner/src/eband_local_planner.cpp<br> <a href="https://github.com/rs1990/Husky_robot_packages">https://github.com/rs1990/Husky_robot_packages</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">RangeSensor.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">/data/ias_perception/cop_sr4_plugins/src/RangeSensor.cpp<br> <a href="https://github.com/code-iai/ias_perception">https://github.com/code-iai/ias_perception</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">bioloid_interface.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">/data/ics_bioloid_fuerte/bioloid_interface/src/bioloid_interface.cpp<br> <a href="https://github.com/brennand/ics_bioloid_fuerte">https://github.com/brennand/ics_bioloid_fuerte</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">ira_imu.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">/data/imu_utility/src/ira_imu.cpp<br> <a href="https://github.com/Waywrong/imu_utility">https://github.com/Waywrong/imu_utility</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">tools.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">/data/interactive_markers/src/tools.cpp<br> <a href="https://github.com/ros-visualization/interactive_markers">https://github.com/ros-visualization/interactive_markers</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">jaco_types.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/jaco_husky_demo/jaco_driver/src/jaco_types.cpp<br> <a href="https://github.com/xwu4lab/jaco_husky_demo">https://github.com/xwu4lab/jaco_husky_demo</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">AP_Autopilot.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/komodo/APM2.5/libraries/APO/AP_Autopilot.cpp<br> <a href="https://github.com/robotican/komodo">https://github.com/robotican/komodo</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">visualOdometry.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/laser_sweep_with_guidance/src/visual/visualOdometry.cpp<br> <a href="https://github.com/JinqiaoShi/laser_sweep_with_guidance">https://github.com/JinqiaoShi/laser_sweep_with_guidance</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">pose_follower.cpp</a></div>
+<div class="divTableCell">7</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/Local_Planners/pose_follower/src/pose_follower.cpp<br> <a href="https://github.com/AutoPark/Local_Planners">https://github.com/AutoPark/Local_Planners</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">node.cpp</a></div>
+<div class="divTableCell">7</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/localAStar/src/node.cpp<br> <a href="https://github.com/Askodan/localAStar">https://github.com/Askodan/localAStar</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">modeswitcher.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/mannu_local_eklavya/controls/controls/src/modeswitcher.cpp<br> <a href="https://github.com/manujagrawal/mannu_local_eklavya">https://github.com/manujagrawal/mannu_local_eklavya</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">move_simple.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/marhes-ros-pkg/sandbox/titus/ml_light_txt_changes/src/move_simple.cpp<br> <a href="https://github.com/smilingpaul/marhes-ros-pkg">https://github.com/smilingpaul/marhes-ros-pkg</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">autopilot_manager_function.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/MCU_ArCaRa/NapoDrone_ws/src/AutopilotManager/src/autopilot_manager_function.cpp<br> <a href="https://github.com/Ste1989/MCU_ArCaRa">https://github.com/Ste1989/MCU_ArCaRa</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">motor_control_hc.cpp</a></div>
+<div class="divTableCell">11</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/nps_ws/src/phidgets/src/motor_control_hc.cpp<br> <a href="https://github.com/ajayjain/nps_ws">https://github.com/ajayjain/nps_ws</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">ohm_drive_mode_control.cpp</a></div>
+<div class="divTableCell">10</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/Ohm2017/ohm_igvc/src/ohm_drive_mode_control.cpp<br> <a href="https://github.com/iscumd/Ohm2017">https://github.com/iscumd/Ohm2017</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">interaction_test2_1.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/okao_client/src/interaction_test2_1.cpp<br> <a href="https://github.com/cvpapero/okao_client">https://github.com/cvpapero/okao_client</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">random_move.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">4</div>
+<div class="divTableCell">/data/pacman/src/irobotcreate/src/random_move.cpp<br> <a href="https://github.com/Quinn-Donnelly/Pacman-Simulation-ROS">https://github.com/Quinn-Donnelly/Pacman-Simulation-ROS</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">search_chargingpile_manager.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/peter_chargingpile_search/src/search_chargingpile_manager.cpp<br> <a href="https://github.com/xiwrong/peter_chargingpile_search">https://github.com/xiwrong/peter_chargingpile_search</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">trajectory_planner_ros.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/phriky-units/examples/assignment/src/trajectory_planner_ros.cpp<br> <a href="https://github.com/jinpyojeon/TRIN_EARL">https://github.com/jinpyojeon/TRIN_EARL</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">ras_odometry_node.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/RAS-2016/ras_odometry/src/ras_odometry_node.cpp<br> <a href="https://github.com/KTH-RAS/RAS2016">https://github.com/KTH-RAS/RAS2016</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">sparki_set_pose.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/RBE_510_ROS/sparki_control/src/sparki_set_pose.cpp<br> <a href="https://github.com/ChrisBove/RBE_510_ROS">https://github.com/ChrisBove/RBE_510_ROS</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">teleop_joypad.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">/data/ResearchCamp4/raw_command_tools/raw_teleop/ros/src/teleop_joypad.cpp<br> <a href="https://github.com/RC4Group1/ResearchCamp4">https://github.com/RC4Group1/ResearchCamp4</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">user_footprint_follow.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/RoboCup-Home-Follow-use-lidar-to-follow-/user_tracker/src/user_footprint_follow.cpp<br> <a href="https://github.com/AIHZP/RoboCup-Home-Follow-use-lidar-to-follow-">https://github.com/AIHZP/RoboCup-Home-Follow-use-lidar-to-follow-</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">tf_unittest.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">/data/robomagellan/Codigos/Raspberry/desenvolvimentoRos/src/tf/test/tf_unittest.cpp<br> <a href="https://github.com/UnbDroid/robomagellan">https://github.com/UnbDroid/robomagellan</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">pioneer_odometry.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">/data/Robotica/catkin_ws/src/modelo_diferencial_catedra/src/pioneer_odometry.cpp<br> <a href="https://github.com/Karamchi/Robotica">https://github.com/Karamchi/Robotica</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">stage_sim.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/ROS-CATEC/CATEC_uav/src/link/stage_sim.cpp<br> <a href="https://github.com/Bardo91/ROS-CATEC">https://github.com/Bardo91/ROS-CATEC</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">keyboard_teleop_node.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">4</div>
+<div class="divTableCell">/data/ROS-Groovy-Workspace/src/robot_teleop/src/keyboard_teleop/keyboard_teleop_node.cpp<br> <a href="https://github.com/Bardo91/ROS-CATEC">https://github.com/Bardo91/ROS-CATEC</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">step_navigator.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/ROSMAV/brown-ros-pkg-read-only/experimental/multirobot-demo-aggeliki/ROS_extra_sw/aggeliki/multirobot_coordination_map/step_navigator/src/step_navigator.cpp<br> <a href="https://github.com/dutchcheesehead/ROSMAV">https://github.com/dutchcheesehead/ROSMAV</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">WIDL-2207.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/ROSnodes/WIDL/src/WIDL-2207.cpp<br> <a href="https://github.com/Near32/ROSnodes">https://github.com/Near32/ROSnodes</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">Sensor.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">/data/RPL_individual_4/src/Sensor.cpp<br> <a href="https://github.com/mafilipp/RPL_individual_4">https://github.com/mafilipp/RPL_individual_4</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">SchunkCanopenHardwareInterface.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">/data/schunk_canopen_driver/src/SchunkCanopenHardwareInterface.cpp<br> <a href="https://github.com/fzi-forschungszentrum-informatik/schunk_canopen_driver">https://github.com/fzi-forschungszentrum-informatik/schunk_canopen_driver</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">robot_velocity_node.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/SDI-11911/Proyecto2/src/ekbot_ctrl/robot_velocity_node.cpp<br> <a href="https://github.com/EagleKnights/ek-ssl">https://github.com/EagleKnights/ek-ssl</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">Agent.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/steering_behaviors_controller/src/Agent.cpp<br> <a href="https://github.com/nahueJ/steering_behaviors_controller">https://github.com/nahueJ/steering_behaviors_controller</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">SwarmControllerNode.cpp</a></div>
+<div class="divTableCell">6</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/swarm_control/src/SwarmControllerNode.cpp<br> <a href="https://github.com/rafaelrgb/uav_swarm_pkgs">https://github.com/rafaelrgb/uav_swarm_pkgs</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">semantic_map.cpp</a></div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">/data/thesis/src/semantic_map.cpp<br> <a href="https://github.com/cargath/thesis">https://github.com/cargath/thesis</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">dwa_planner_ros.cpp</a></div>
+<div class="divTableCell">3</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/utpharosnavigation/dwa_local_planner/src/dwa_planner_ros.cpp<br> <a href="https://github.com/cameronthemoose/utpharosnavigation">https://github.com/cameronthemoose/utpharosnavigation</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">ins.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/vectornav/src/ins.cpp<br> <a href="https://github.com/akashgaurav/vectornav/">https://github.com/akashgaurav/vectornav/</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">base_controller.cpp</a></div>
+<div class="divTableCell">1</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/vendbot/src/base_controller.cpp<br> <a href="https://github.com/toddsampson/vendbot">https://github.com/toddsampson/vendbot</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">moveit_ocs_model.cpp</a></div>
+<div class="divTableCell">7</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/vigir_manipulation_planning/vigir_ocs_robot_model/src/moveit_ocs_model.cpp<br> <a href="https://github.com/team-vigir/vigir_manipulation_planning">https://github.com/team-vigir/vigir_manipulation_planning</a></div>
+</div>
+<div class="divTableRow">
+<div class="divTableCell">proxy.cpp</a></div>
+<div class="divTableCell">2</div>
+<div class="divTableCell">0</div>
+<div class="divTableCell">/data/zsROS/zsProxy/src/proxy.cpp<br> <a href="https://github.com/ZhenshengLee/zsROS">https://github.com/ZhenshengLee/zsROS</a></div>
+</div>
+
+
+                                </div><!--//section-block-->
+
+
+<br/>
+        
+        <div id="promo-block" class="promo-block promo-block-2">
+            <div class="container">
+                <div class="promo-block-inner">
+                </div><!--//promo-block-inner-->  
+            </div><!--//container-->
+        </div><!--//promo-block-->
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <!--<small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>-->
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>  
+    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>                                                                 
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

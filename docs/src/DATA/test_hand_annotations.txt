@@ -1,0 +1,136 @@
+xy_goal_tolerance_, {'meter': 1.0}
+tol, {'meter': 1.0}
+v_ref_z_, {'second': -1.0, 'meter': 1.0}
+max_acceleration_x_, {'second': -2.0, 'meter': 1.0}
+radians_per_meter_, {'radian': 1.0, 'meter': -1.0}
+track_width_, {'meter': 1.0}
+desired_time, {'second': 1.0}
+uv, {'second': -1.0, 'meter': 1.0}
+acc_lim_y_, {'second': -2.0, 'meter': 1.0}
+trans_stopped_velocity_, {'second': -1.0, 'meter': 1.0}
+v_ref_x_, {'second': -1.0, 'meter': 1.0}
+wx4, {'second': -1.0, 'meter': 1.0}
+dist_home_obj1, {'meter': 1.0}
+v_left_mps, {'second': -1.0, 'meter': 1.0}
+vobjg, {'second': -1.0, 'meter': 1.0}
+p3, {'meter': 1.0}
+right_last_timestamp_, {'second': 1.0}
+k_vz, {'second': -1.0}
+v3, {'second': -1.0, 'meter': 1.0}
+stir_y, {'meter': 1.0}
+dp, {'meter': 1.0}
+dUl, {'second': -1.0, 'meter': 1.0}
+kd, {'second': -1.0}
+v1x, {'second': -1.0, 'meter': 1.0}
+last_sent_x_, {'second': -1.0, 'meter': 1.0}
+target_distance, {'meter': 1.0}
+max_speed_to_stop, {'second': -1.0}
+yaw_goal_tolerance_, {'radian': 1.0}
+odom_phi_, {'radian': 1.0}
+max_v_inc, {'second': -1.0, 'meter': 1.0}
+max_velocity_error, {'second': -1.0}
+trunc_time_, {'second': 1.0}
+ramp_up_dist, {'meter': 1.0}
+C, {'second': -1.0, 'meter': 1.0}
+publish_positions_period_, {'second': 1.0}
+angle_a, {'degree_360': 1.0}
+linear_accel, {'second': -2.0, 'meter': 1.0}
+summit_xl_trackwidth_, {'meter': 1.0}
+angle_b, {'degree_360': 1.0}
+last_sent_r_, {'second': -1.0}
+b, {'second': -1.0}
+max_vel_th_, {'second': -1.0}
+scheduled_vel, {'second': -1.0, 'meter': 1.0}
+vector2, {'meter': 1.0}
+max_angular_error, {'second': -1.0}
+default_accel_max, {'second': -2.0, 'meter': 1.0}
+c_actual, {'degree_360': 1.0}
+B, {'second': -1.0, 'meter': 1.0}
+min_acc_vel, {'second': -1.0}
+w_ref_, {'second': -1.0}
+wx1, {'second': -1.0, 'meter': 1.0}
+obj_vel, {'second': -1.0, 'meter': 1.0}
+T_const_v, {'second': 1.0}
+accel_lim_w, {'second': -2.0}
+v_max, {'second': -1.0, 'meter': 1.0}
+delta_phi, {'degree_360': 1.0}
+omega_max_, {'second': -1.0}
+v4x, {'second': -1.0, 'meter': 1.0}
+current_angular_velocity, {'second': -1.0}
+kp, {'second': -1.0}
+max_vel_x_, {'second': -1.0, 'meter': 1.0}
+Y1, {'meter': 1.0}
+max_rot, {'quaternion': 1.0}
+baro_raw, {'second': -2.0, 'meter': -1.0, 'kilogram': 1.0}
+v_th_samp, {'second': -1.0}
+left_dx, {'meter': 1.0}
+Y2, {'meter': 1.0}
+c_desired, {'degree_360': 1.0}
+v4, {'second': -1.0, 'meter': 1.0}
+Kd, {'second': -1.0}
+z_vel_offset, {'second': -1.0, 'meter': 1.0}
+goal_x_distance, {'meter': 1.0}
+desired_velocity_angular, {'second': -1.0}
+t_minus, {'second': 1.0}
+retval, {'radian': 1.0}
+L, {'meter': 1.0}
+W, {'meter': 1.0}
+angle_a, {'radian': 1.0}
+vobj, {'second': -1.0, 'meter': 1.0}
+start_phi, {'radian': 1.0}
+dang, {'radian': 1.0}
+linear_deadband, {'second': -1.0, 'meter': 1.0}
+a_radian_robot, {'radian': 1.0}
+Kp, {'second': -1.0}
+goal_y_distance, {'meter': 1.0}
+saw_x, {'meter': 1.0}
+wy3, {'second': -1.0, 'meter': 1.0}
+v3x, {'second': -1.0, 'meter': 1.0}
+obj2_angle, {'degree_360': 1.0}
+left, {'second': -1.0, 'meter': 1.0}
+sim_period_, {'second': 1.0}
+acc_lim_th_, {'second': -2.0}
+v2x, {'second': -1.0, 'meter': 1.0}
+summit_xl_wheelbase_, {'meter': 1.0}
+FRAMES_PER_SEC, {'second': -1.0}
+a_degree_table, {'degree_360': 1.0}
+max_vel_y_, {'second': -1.0, 'meter': 1.0}
+left_last_timestamp_, {'second': 1.0}
+frame1, {'meter': 1.0}
+VEL_X, {'second': -1.0, 'meter': 1.0}
+summit_xl_d_tracks_m_, {'meter': 1.0}
+catch_z, {'meter': 1.0}
+robot_pose_pa_, {'radian': 1.0}
+fSamplePeriod, {'second': 1.0}
+v_th_samp, {'second': -2.0}
+max_velocity, {'second': -1.0, 'meter': 1.0}
+robot_pose_vx_, {'second': -1.0, 'meter': 1.0}
+dist_accel, {'meter': 1.0}
+c_degree_table, {'degree_360': 1.0}
+summit_xl_wheel_diameter_, {'meter': 1.0}
+angular_distance, {'degree_360': 1.0}
+xy_threshold, {'meter': 1.0}
+v1y, {'second': -1.0, 'meter': 1.0}
+disp_y, {'meter': 1.0}
+max_error_holo_, {'second': 1.0}
+minimum_height, {'meter': 1.0}
+max_y_, {'meter': 1.0}
+angle_gamma, {'radian': 1.0}
+quaternion_norm, {'quaternion': 1.0}
+robot_pose_py_, {'meter': 1.0}
+epv, {'second': -1.0, 'meter': 1.0}
+vp, {'second': -1.0, 'meter': 1.0}
+right_last_position_, {'radian': 1.0}
+y_act, {'meter': 1.0}
+max_acceleration_r_, {'second': -2.0}
+obj2_table, {'degree_360': 1.0}
+speed_lim_w, {'second': -1.0}
+q4, {'second': -1.0, 'meter': 1.0}
+v3y, {'second': -1.0, 'meter': 1.0}
+desired_velocity, {'second': -1.0, 'meter': 1.0}
+min_y_, {'meter': 1.0}
+scissor_ref_pos, {'meter': 1.0}
+b_actual, {'degree_360': 1.0}
+max_linear_accel, {'second': -2.0, 'meter': 1.0}
+y_middle, {'meter': 1.0}
+sin_a, {'radian': 1.0}
