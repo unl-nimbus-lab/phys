@@ -6,6 +6,32 @@
 # [https://unl-nimbus-lab.github.io/phys/](https://unl-nimbus-lab.github.io/phys/)
 
 
+CITE:
+```
+@inproceedings{DBLP:conf/sigsoft/KateOZEX18,
+  author    = {Sayali Kate and
+               John{-}Paul Ore and
+               Xiangyu Zhang and
+               Sebastian G. Elbaum and
+               Zhaogui Xu},
+  editor    = {Gary T. Leavens and
+               Alessandro Garcia and
+               Corina S. Pasareanu},
+  title     = {Phys: probabilistic physical unit assignment and inconsistency detection},
+  booktitle = {Proceedings of the 2018 {ACM} Joint Meeting on European Software Engineering
+               Conference and Symposium on the Foundations of Software Engineering,
+               {ESEC/SIGSOFT} {FSE} 2018, Lake Buena Vista, FL, USA, November 04-09,
+               2018},
+  pages     = {563--573},
+  publisher = {{ACM}},
+  year      = {2018},
+  url       = {https://doi.org/10.1145/3236024.3236035},
+  doi       = {10.1145/3236024.3236035},
+  timestamp = {Fri, 06 Nov 2020 10:10:15 +0100},
+  biburl    = {https://dblp.org/rec/conf/sigsoft/KateOZEX18.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+```
 
 ## FILES
 
@@ -34,30 +60,4 @@
 
 
 
-CITE:
-```
-@inproceedings{DBLP:conf/sigsoft/KateOZEX18,
-  author    = {Sayali Kate and
-               John{-}Paul Ore and
-               Xiangyu Zhang and
-               Sebastian G. Elbaum and
-               Zhaogui Xu},
-  editor    = {Gary T. Leavens and
-               Alessandro Garcia and
-               Corina S. Pasareanu},
-  title     = {Phys: probabilistic physical unit assignment and inconsistency detection},
-  booktitle = {Proceedings of the 2018 {ACM} Joint Meeting on European Software Engineering
-               Conference and Symposium on the Foundations of Software Engineering,
-               {ESEC/SIGSOFT} {FSE} 2018, Lake Buena Vista, FL, USA, November 04-09,
-               2018},
-  pages     = {563--573},
-  publisher = {{ACM}},
-  year      = {2018},
-  url       = {https://doi.org/10.1145/3236024.3236035},
-  doi       = {10.1145/3236024.3236035},
-  timestamp = {Fri, 06 Nov 2020 10:10:15 +0100},
-  biburl    = {https://dblp.org/rec/conf/sigsoft/KateOZEX18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-```
 
